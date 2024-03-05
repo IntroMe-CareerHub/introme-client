@@ -1,9 +1,9 @@
+import { useState } from "react";
 import { GrPowerReset } from "react-icons/gr";
 import { LuCopy } from "react-icons/lu";
-import { BsToggleOn } from "react-icons/bs";
 import { AiOutlineInfoCircle } from "react-icons/ai";
 import { FaArrowRight, FaCircle } from "react-icons/fa";
-import { useState } from "react";
+import ToggleButton from "../../compoments/buttons/ToggleButton.tsx";
 
 export default function SpellCheck() {
     const [showInfo, setShowInfo] = useState(false);
@@ -17,7 +17,7 @@ export default function SpellCheck() {
                         <div className="flex gap-4 justify-end items-center">
                             <div className="flex gap-2 justify-end items-center">
                                 <p className="text-xs">공백</p>
-                                <BsToggleOn size="20" color="#1DCD8B" />
+                                <ToggleButton />
                             </div>
                             <div className="flex gap-2 justify-end items-center">
                                 <div className="relative flex gap-1">
@@ -35,7 +35,7 @@ export default function SpellCheck() {
                                                 className="absolute z-0 border-l-8 border-r-8
                                                     border-b-8 border-transparent border-b-white
                                                     -bottom-2 left-0 before:filter drop-shadow"
-                                            ></div>
+                                            />
                                             <div className="absolute z-50 bg-white py-2 px-3 rounded-full shadow-toggle text-xs -bottom-10 -left-56">
                                                 <p className="text-nowrap">
                                                     ‘.’과 ‘,’를 제외한 모든 특수문자는 제거됩니다.
@@ -44,7 +44,7 @@ export default function SpellCheck() {
                                         </>
                                     )}
                                 </div>
-                                <BsToggleOn size="20" color="#1DCD8B" />
+                                <ToggleButton />
                             </div>
                         </div>
                     </div>
