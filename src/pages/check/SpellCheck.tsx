@@ -10,10 +10,10 @@ export default function SpellCheck() {
     const [showInfo, setShowInfo] = useState(false);
     return (
         <div className="flex flex-col justify-center items-center h-screen px-4 pb-4">
-            <div className="w-full p-6 text-center font-GmarketSansMedium">Header</div>
+            <div className="w-full p-6 text-center ">Header</div>
             <div className="flex justify-center items-center bg-main-3 bg-opacity-15 w-full flex-grow rounded-xl shadow-main">
                 <div className="flex flex-col w-full h-full py-4 pl-4 pr-2">
-                    <div className="grid grid-cols-2 font-GmarketSansMedium pt-2 pb-3">
+                    <div className="grid grid-cols-2  pt-2 pb-3">
                         <p className="text-lg">원문</p>
                         <div className="flex gap-4 justify-end items-center">
                             <div className="flex gap-2 justify-end items-center">
@@ -49,7 +49,7 @@ export default function SpellCheck() {
                             </div>
                         </div>
                     </div>
-                    <div className="flex flex-col w-full h-full bg-white rounded-xl shadow-main font-GmarketSansMedium px-4 pt-4 pb-2 gap-2">
+                    <div className="flex flex-col w-full h-full bg-white rounded-xl shadow-main  px-4 pt-4 pb-2 gap-2">
                         <textarea
                             placeholder="검사할 내용을 입력하세요."
                             className="text-sm grow resize-none focus:outline-none"
@@ -58,7 +58,7 @@ export default function SpellCheck() {
                             0/20000(글자수) | 0/40000(byte)
                         </p>
                     </div>
-                    <div className="flex w-full pt-4 gap-4 font-GmarketSansMedium text-sm">
+                    <div className="flex w-full pt-4 gap-4  text-sm">
                         <DisabledButton />
                         <button
                             type="button"
@@ -83,7 +83,7 @@ export default function SpellCheck() {
                     </div>
                 </div>
                 <div className="flex flex-col w-full h-full py-4 pr-4 pl-2">
-                    <div className="flex flex-row justify-between font-GmarketSansMedium">
+                    <div className="flex flex-row justify-between ">
                         <p className="text-lg pt-2 pb-3">교정 결과</p>
                         <div className="grid grid-cols-2 grid-rows-2 text-xs py-2 pr-2">
                             <div className="flex text-my-red items-center gap-2">
@@ -104,7 +104,7 @@ export default function SpellCheck() {
                             </div>
                         </div>
                     </div>
-                    <div className="w-full h-full bg-white rounded-xl shadow-main font-GmarketSansMedium p-4 overflow-auto">
+                    <div className="w-full h-full bg-white rounded-xl shadow-main  p-4 overflow-auto">
                         <div className="flex flex-col w-full h-full text-sm gap-3">
                             <div className="grid grid-cols-3">
                                 <p className="text-my-blue">!!!!!</p>
@@ -140,7 +140,7 @@ export default function SpellCheck() {
                             </div>
                         </div>
                     </div>
-                    <div className="flex w-full pt-4 justify-between font-GmarketSansMedium text-sm">
+                    <div className="flex w-full pt-4 justify-between  text-sm">
                         <div className="flex items-center pl-2 text-my-red">교정 개수 3개</div>
                         <div className="flex gap-4">
                             <DisabledButton />

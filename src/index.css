@@ -23,6 +23,10 @@
     font-style: normal;
 }
 
+:root {
+    @apply font-GmarketSansMedium;
+}
+
 section {
     @apply h-full snap-start;
 }
