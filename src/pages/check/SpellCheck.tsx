@@ -3,8 +3,10 @@ import { LuCopy } from "react-icons/lu";
 import { BsToggleOn } from "react-icons/bs";
 import { AiOutlineInfoCircle } from "react-icons/ai";
 import { FaArrowRight, FaCircle } from "react-icons/fa";
+import { useState } from "react";
 
 export default function SpellCheck() {
+    const [showInfo, setShowInfo] = useState(false);
     return (
         <div className="flex flex-col justify-center items-center h-screen px-4 pb-4">
             <div className="w-full p-6 text-center font-GmarketSansMedium">Header</div>
@@ -19,20 +21,28 @@ export default function SpellCheck() {
                             </div>
                             <div className="flex gap-2 justify-end items-center">
                                 <div className="relative flex gap-1">
-                                    <div className="cursor-pointer text-gray-500">
+                                    <div
+                                        className="cursor-pointer text-gray-500"
+                                        onMouseEnter={() => setShowInfo(true)}
+                                        onMouseLeave={() => setShowInfo(false)}
+                                    >
                                         <AiOutlineInfoCircle />
                                     </div>
                                     <p className="text-xs">특수문자</p>
-                                    <div
-                                        className="before:absolute z-0 before:border-l-8 before:border-r-8
-                                                    before:border-b-8 before:border-transparent before:border-b-white
-                                                    before:-bottom-2 before:left-0 before:filter before:drop-shadow"
-                                    ></div>
-                                    <div className="absolute z-50 bg-white py-2 px-3 rounded-full shadow-toggle text-xs -bottom-10 -left-56">
-                                        <p className="text-nowrap">
-                                            ‘.’과 ‘,’를 제외한 모든 특수문자는 제거됩니다.
-                                        </p>
-                                    </div>
+                                    {showInfo && (
+                                        <>
+                                            <div
+                                                className="absolute z-0 border-l-8 border-r-8
+                                                    border-b-8 border-transparent border-b-white
+                                                    -bottom-2 left-0 before:filter drop-shadow"
+                                            ></div>
+                                            <div className="absolute z-50 bg-white py-2 px-3 rounded-full shadow-toggle text-xs -bottom-10 -left-56">
+                                                <p className="text-nowrap">
+                                                    ‘.’과 ‘,’를 제외한 모든 특수문자는 제거됩니다.
+                                                </p>
+                                            </div>
+                                        </>
+                                    )}
                                 </div>
                                 <BsToggleOn size="20" color="#1DCD8B" />
                             </div>
