@@ -1,15 +1,11 @@
 import "./App.css";
+import { Route, Routes } from "react-router-dom";
+import SpellCheck from "./pages/check/SpellCheck.tsx";
 
-function App() {
+export default function App() {
     return (
-        <div className="text-blue-400">
-            <h1 className="text-blue-500 font-GmarketSansLight"> Hello hihihihi </h1>
-            <h1 className="text-3xl font-bold font-GmarketSansBold">Hello world!</h1>
-            <h1 className="text-3xl font-bold text-main-1 font-GmarketSansMedium">
-                test!!! 테스트코드
-            </h1>
-        </div>
+        <Routes>
+            <Route path="/check" element={<SpellCheck />} />
+        </Routes>
     );
 }
-
-export default App;
