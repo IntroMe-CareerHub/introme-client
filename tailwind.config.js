@@ -22,6 +22,9 @@ export default {
             GmarketSansBold: ["GmarketSansBold"],
             GmarketSansMedium: ["GmarketSansMedium"],
             GmarketSansLight: ["GmarketSansLight"]
+        },
+        backgroundImage: {
+            IntroMeLogo: "url(./assets/IntroMeLogo.png)"
         }
     },
     plugins: []
