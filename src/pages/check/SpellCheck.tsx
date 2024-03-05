@@ -39,7 +39,10 @@ export default function SpellCheck() {
                         </div>
                     </div>
                     <div className="flex flex-col w-full h-full bg-white rounded-xl shadow-main font-GmarketSansMedium px-4 pt-4 pb-2 gap-2">
-                        <p className="text-sm text-neutral-400 grow">검사할 내용을 입력하세요.</p>
+                        <textarea
+                            placeholder="검사할 내용을 입력하세요."
+                            className="text-sm grow resize-none focus:outline-none"
+                        />
                         <p className="flex h-13 text-xs text-zinc-500 justify-end">
                             0/20000(글자수) | 0/40000(byte)
                         </p>
