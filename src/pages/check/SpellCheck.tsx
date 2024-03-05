@@ -3,7 +3,8 @@ import { GrPowerReset } from "react-icons/gr";
 import { LuCopy } from "react-icons/lu";
 import { AiOutlineInfoCircle } from "react-icons/ai";
 import { FaArrowRight, FaCircle } from "react-icons/fa";
-import ToggleButton from "../../compoments/buttons/ToggleButton.tsx";
+import ToggleButton from "../../components/buttons/ToggleButton.tsx";
+import DisabledButton from "../../components/buttons/DisabledButton.tsx";
 
 export default function SpellCheck() {
     const [showInfo, setShowInfo] = useState(false);
@@ -58,13 +59,7 @@ export default function SpellCheck() {
                         </p>
                     </div>
                     <div className="flex w-full pt-4 gap-4 font-GmarketSansMedium text-sm">
-                        <button
-                            type="button"
-                            onClick={undefined}
-                            className="flex px-8 py-2 justify-center items-center bg-black bg-opacity-5 text-neutral-400 rounded-md shadow-btn"
-                        >
-                            !@#$%
-                        </button>
+                        <DisabledButton />
                         <button
                             type="button"
                             onClick={undefined}
@@ -74,13 +69,6 @@ export default function SpellCheck() {
                                 <GrPowerReset />
                             </div>
                             초기화
-                        </button>
-                        <button
-                            type="button"
-                            onClick={undefined}
-                            className="flex px-8 py-2 justify-center items-center bg-black bg-opacity-5 text-neutral-400 rounded-md shadow-btn"
-                        >
-                            !@#$%
                         </button>
                         <button
                             type="button"
@@ -155,27 +143,14 @@ export default function SpellCheck() {
                     <div className="flex w-full pt-4 justify-between font-GmarketSansMedium text-sm">
                         <div className="flex items-center pl-2 text-my-red">교정 개수 3개</div>
                         <div className="flex gap-4">
+                            <DisabledButton />
                             <button
                                 type="button"
                                 onClick={undefined}
-                                className="flex px-8 py-2 justify-center items-center bg-black bg-opacity-5 text-neutral-400 rounded-md shadow-btn"
+                                className="flex px-7 py-2 justify-center items-center bg-white rounded-md shadow-btn"
                             >
-                                !@#$%
+                                전체 수정
                             </button>
-                            {/*<button*/}
-                            {/*    type="button"*/}
-                            {/*    onClick={undefined}*/}
-                            {/*    className="flex px-7 py-2 justify-center items-center bg-white rounded-md shadow-btn"*/}
-                            {/*>*/}
-                            {/*    전체 수정*/}
-                            {/*</button>*/}
-                            {/*<button*/}
-                            {/*    type="button"*/}
-                            {/*    onClick={undefined}*/}
-                            {/*    className="flex px-8 py-2 justify-center items-center bg-black bg-opacity-5 text-neutral-400 rounded-md shadow-btn"*/}
-                            {/*>*/}
-                            {/*    !@#$%*/}
-                            {/*</button>*/}
                             <button
                                 type="button"
                                 onClick={undefined}
