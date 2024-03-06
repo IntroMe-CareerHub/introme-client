@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { MainProps } from "../../types/main";
 
 export default function Start({ title, sectionId, description, content }: MainProps) {
@@ -9,12 +10,12 @@ export default function Start({ title, sectionId, description, content }: MainPr
             <div className="space-y-12">
                 <h1 className="font-bold text-7xl ">{title}</h1>
                 <p className="font-medium text-4xl">{description}</p>
-                <button
-                    type="button"
-                    className="bg-main-1 p-7 text-3xl font-bold text-white rounded-2xl"
+                <Link
+                    to="/check"
+                    className="bg-main-1 p-7 text-3xl font-bold text-white rounded-2xl inline-block"
                 >
                     {content}
-                </button>
+                </Link>
             </div>
         </section>
     );

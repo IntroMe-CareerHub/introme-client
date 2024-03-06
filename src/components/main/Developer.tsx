@@ -10,7 +10,7 @@ export default function Developer({ title, sectionId }: MainProps) {
             <h1 className="font-bold text-6xl">{title}</h1>
             <div className="mt-20 flex items-end text-center font-bold justify-between space-x-20">
                 <DeveloperType
-                    profiles={[{ nickname: "@sooyeoniya" }, { nickname: "@ssseok" }]}
+                    profiles={[{ nickname: "sooyeoniya" }, { nickname: "ssseok" }]}
                     title="FrontEnd"
                 >
                     <p className="mt-10 mb-8 font-light text-2xl">
@@ -20,7 +20,7 @@ export default function Developer({ title, sectionId }: MainProps) {
                     </p>
                 </DeveloperType>
                 <DeveloperType
-                    profiles={[{ nickname: "@hyebinnn" }, { nickname: "@philos1234" }]}
+                    profiles={[{ nickname: "hyebinnn" }, { nickname: "philos1234" }]}
                     title="BackEnd"
                 >
                     <p className="mt-10 mb-8 font-light text-2xl">
