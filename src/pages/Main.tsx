@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from "react";
 import Advantage from "../components/main/Advantage";
 import Developer from "../components/main/Developer";
 import FloatingButton from "../components/main/FloatingButton";
@@ -6,8 +7,58 @@ import Info from "../components/main/Info";
 import Start from "../components/main/Start";
 
 export default function Main() {
+    const containerRef = useRef<HTMLDivElement>(null);
+    const startSectionRef = useRef<HTMLDivElement>(null);
+    const [activeSection, setActiveSection] = useState<string>("");
+    console.log(activeSection);
+
+    const scrollToStart = () => {
+        startSectionRef.current?.scrollIntoView({ behavior: "smooth" });
+    };
+
+    useEffect(() => {
+        const container = containerRef.current;
+
+        const sections: Record<string, HTMLElement | null> = {
+            info: document.getElementById("info"),
+            function_one: document.getElementById("function_one"),
+            function_two: document.getElementById("function_two"),
+            advantages_one: document.getElementById("advantages_one"),
+            advantages_two: document.getElementById("advantages_two"),
+            advantages_three: document.getElementById("advantages_three"),
+            developers: document.getElementById("developers"),
+            start: document.getElementById("start")
+        };
+
+        const handleScroll = () => {
+            if (container) {
+                const scrollPosition = container.scrollTop + container.offsetHeight / 2;
+
+                for (const section in sections) {
+                    const element = sections[section];
+                    if (element) {
+                        const rect = element.getBoundingClientRect();
+                        const top = rect.top + container.scrollTop;
+                        const height = rect.height;
+
+                        if (scrollPosition >= top && scrollPosition <= top + height) {
+                            setActiveSection(section);
+                            break;
+                        }
+                    }
+                }
+            }
+        };
+
+        container?.addEventListener("scroll", handleScroll);
+
+        return () => {
+            container?.removeEventListener("scroll", handleScroll);
+        };
+    }, []);
+
     return (
-        <div className="snap-y snap-mandatory h-screen overflow-y-auto">
+        <div ref={containerRef} className="snap-y snap-mandatory h-screen overflow-auto">
             <Info title="IntroMe" sectionId="info">
                 <p className="font-medium">
                     IntroMe로 완벽한 자기소개서 <br />
@@ -62,14 +113,15 @@ export default function Main() {
                     이는 취업 준비생이 자기소개서를 보다 자신감 있게 제출할 수 있게 해줍니다.
                 </p>
             </Advantage>
-            <Developer sectionId="Developers" title="Developers" />
+            <Developer sectionId="developers" title="Developers" />
             <Start
+                ref={startSectionRef}
                 title="Start"
-                sectionId="Start"
+                sectionId="start"
                 description="맞춤법 교정하러 가볼까요?"
                 content="교정하러 가기 >"
             />
-            <FloatingButton />
+            <FloatingButton onClick={scrollToStart} activeSection={activeSection} />
         </div>
     );
 }
