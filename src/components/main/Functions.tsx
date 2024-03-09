@@ -7,7 +7,7 @@ export default function Functions({ title, sectionId, sectionImage, children }: 
                 <img src={sectionImage} alt="function_1" />
             </div>
             <div className="space-y-4">
-                <h2 className="font-bold text-4xl">{title}</h2>
+                <h2 className="font-GmarketSansBold text-4xl">{title}</h2>
                 {children}
             </div>
         </section>

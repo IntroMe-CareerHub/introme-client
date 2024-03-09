@@ -11,11 +11,11 @@ const Start = forwardRef<HTMLDivElement, MainProps>(
                 className="bg-white flex flex-col items-center justify-center h-full text-center"
             >
                 <div className="space-y-12">
-                    <h1 className="font-bold text-7xl">{title}</h1>
-                    <p className="font-medium text-4xl">{description}</p>
+                    <h1 className="font-GmarketSansBold text-7xl">{title}</h1>
+                    <p className="text-4xl">{description}</p>
                     <Link
                         to="/check"
-                        className="bg-main-1 p-7 text-3xl font-bold text-white rounded-2xl inline-block"
+                        className="bg-main-1 p-7 text-3xl font-GmarketSansBold text-white rounded-2xl inline-block"
                     >
                         {content}
                     </Link>

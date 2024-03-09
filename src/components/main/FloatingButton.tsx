@@ -32,7 +32,7 @@ export default function FloatingButton({ onClick, activeSection }: FloatingButto
             className={`fixed bottom-14 right-14 w-36 h-36 rounded-full text-center font-bold text-xl ${style} flex flex-col items-center justify-center`}
         >
             <div className="relative flex flex-col justify-center items-center ">
-                <span>Start</span>
+                <span className="font-GmarketSansBold">Start</span>
                 <IoIosArrowDown className="absolute -bottom-12" />
             </div>
         </button>

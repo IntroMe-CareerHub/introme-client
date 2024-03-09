@@ -8,7 +8,7 @@ export default function DeveloperProfile({ nickname }: DeveloperProfileProps) {
             className="flex flex-col space-y-2 items-center cursor-pointer"
         >
             <div className="rounded-full bg-white w-28 h-28" />
-            <p className="font-medium text-xl">@{nickname}</p>
+            <p className="font-GmarketSansMedium text-xl">@{nickname}</p>
         </a>
     );
 }
