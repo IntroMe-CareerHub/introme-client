@@ -24,5 +24,4 @@ const Start = forwardRef<HTMLDivElement, MainProps>(
         );
     }
 );
-
 export default Start;

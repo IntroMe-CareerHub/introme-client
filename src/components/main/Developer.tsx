@@ -1,9 +1,11 @@
+import { forwardRef } from "react";
 import { MainProps } from "../../types/main";
 import DeveloperType from "./DeveloperType";
 
-export default function Developer({ title, sectionId }: MainProps) {
+const Developer = forwardRef<HTMLDivElement, MainProps>(({ title, sectionId }, ref) => {
     return (
         <section
+            ref={ref}
             id={sectionId}
             className="bg-black text-white text-center flex flex-col items-center justify-center h-full"
         >
@@ -32,4 +34,5 @@ export default function Developer({ title, sectionId }: MainProps) {
             </div>
         </section>
     );
-}
+});
+export default Developer;

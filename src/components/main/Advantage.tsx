@@ -1,8 +1,10 @@
+import { forwardRef } from "react";
 import { MainProps } from "../../types/main";
 
-export default function Advantage({ title, sectionId, children }: MainProps) {
+const Advantage = forwardRef<HTMLDivElement, MainProps>(({ title, sectionId, children }, ref) => {
     return (
         <section
+            ref={ref}
             id={sectionId}
             className="bg-main-2 flex flex-col items-center justify-center text-center h-full text-white space-y-5"
         >
@@ -10,4 +12,5 @@ export default function Advantage({ title, sectionId, children }: MainProps) {
             {children}
         </section>
     );
-}
+});
+export default Advantage;

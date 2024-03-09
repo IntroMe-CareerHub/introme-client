@@ -8,9 +8,9 @@ interface FloatingButtonProps {
 export default function FloatingButton({ onClick, activeSection }: FloatingButtonProps) {
     const getStyleBasedOnSection = (section: string): string | null => {
         switch (true) {
-            case section.startsWith("advantages"):
+            case section.startsWith("advantage"):
                 return "bg-white text-main-1";
-            case section === "developers":
+            case section === "developer":
                 return "bg-white text-black";
             case section === "start":
                 return null;

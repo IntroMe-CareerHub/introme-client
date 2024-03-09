@@ -1,8 +1,10 @@
+import { forwardRef } from "react";
 import { MainProps } from "../../types/main";
 
-export default function Info({ title, sectionId, children }: MainProps) {
+const Info = forwardRef<HTMLDivElement, MainProps>(({ title, sectionId, children }, ref) => {
     return (
         <section
+            ref={ref}
             id={sectionId}
             className="bg-IntroMeLogo bg-no-repeat bg-cover  bg-center bg-black"
         >
@@ -12,4 +14,6 @@ export default function Info({ title, sectionId, children }: MainProps) {
             </div>
         </section>
     );
-}
+});
+
+export default Info;
