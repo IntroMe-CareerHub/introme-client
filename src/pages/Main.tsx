@@ -1,4 +1,3 @@
-import { useRef } from "react";
 import Advantage from "../components/main/Advantage";
 import Developer from "../components/main/Developer";
 import FloatingButton from "../components/main/FloatingButton";
@@ -6,38 +5,15 @@ import Functions from "../components/main/Functions";
 import Info from "../components/main/Info";
 import Start from "../components/main/Start";
 import useScrollSection from "../hooks/useScrollSection";
+import { useSectionRefs } from "../hooks/useSectionRefs";
 
 export default function Main() {
-    const containerRef = useRef<HTMLDivElement>(null);
-    const infoRef = useRef<HTMLDivElement>(null);
-    const functionOneRef = useRef<HTMLDivElement>(null);
-    const functionTwoRef = useRef<HTMLDivElement>(null);
-    const advantageOneRef = useRef<HTMLDivElement>(null);
-    const advantageTwoRef = useRef<HTMLDivElement>(null);
-    const advantageThreeRef = useRef<HTMLDivElement>(null);
-    const developerRef = useRef<HTMLDivElement>(null);
-    const startRef = useRef<HTMLDivElement>(null);
-
-    const sectionsRef = {
-        info: infoRef,
-        function_one: functionOneRef,
-        function_two: functionTwoRef,
-        advantage_one: advantageOneRef,
-        advantage_two: advantageTwoRef,
-        advantage_three: advantageThreeRef,
-        developer: developerRef,
-        star: startRef
-    };
-
-    const activeSection = useScrollSection(containerRef, sectionsRef);
-
-    const scrollToStart = () => {
-        startRef.current?.scrollIntoView({ behavior: "smooth" });
-    };
+    const { containerRef, sectionRefs, scrollToRef } = useSectionRefs();
+    const activeSection = useScrollSection(containerRef, sectionRefs);
 
     return (
         <div ref={containerRef} className="snap-y snap-mandatory h-screen overflow-auto">
-            <Info ref={infoRef} title="IntroMe" sectionId="info">
+            <Info ref={sectionRefs.info} title="IntroMe" sectionId="info">
                 <p>
                     IntroMe로 완벽한 자기소개서 <br />
                     'IntroMe'를 소개합니다.
@@ -49,7 +25,7 @@ export default function Main() {
                 </p>
             </Info>
             <Functions
-                ref={functionOneRef}
+                ref={sectionRefs.function_one}
                 title="맞춤법 및 문법 검사"
                 sectionId="function_one"
                 sectionImage="/src/assets/Function-1.png"
@@ -60,7 +36,7 @@ export default function Main() {
                 </p>
             </Functions>
             <Functions
-                ref={functionTwoRef}
+                ref={sectionRefs.function_two}
                 title="특수 문자 제거"
                 sectionId="function_two"
                 sectionImage="/src/assets/Function-2.png"
@@ -71,7 +47,11 @@ export default function Main() {
                     전문적인 어조를 유지하는 방법을 설명합니다.
                 </p>
             </Functions>
-            <Advantage ref={advantageOneRef} title="효율성과 편의성" sectionId="advantage_one">
+            <Advantage
+                ref={sectionRefs.advantage_one}
+                title="효율성과 편의성"
+                sectionId="advantage_one"
+            >
                 <p>
                     여러 도구를 따로 사용할 필요 없이 'IntroMe' 하나로 맞춤법 검사, 특수문자 제거,
                     문서 포맷팅 등을 <br />한 번에 처리할 수 있습니다. 이는 사용자에게 시간을
@@ -79,7 +59,7 @@ export default function Main() {
                 </p>
             </Advantage>
             <Advantage
-                ref={advantageTwoRef}
+                ref={sectionRefs.advantage_two}
                 title="일관성 있는 품질 보장"
                 sectionId="advantage_two"
             >
@@ -90,22 +70,29 @@ export default function Main() {
                     만들어줍니다.
                 </p>
             </Advantage>
-            <Advantage ref={advantageThreeRef} title="오류 최소화" sectionId="advantage_three">
+            <Advantage
+                ref={sectionRefs.advantage_three}
+                title="오류 최소화"
+                sectionId="advantage_three"
+            >
                 <p>
                     맞춤법 검사와 특수문자 제거 기능은 작성한 내용의 오류를 최소화하여, <br />
                     실수로 인한 부정적인 인상을 줄여줍니다. <br />
                     이는 취업 준비생이 자기소개서를 보다 자신감 있게 제출할 수 있게 해줍니다.
                 </p>
             </Advantage>
-            <Developer ref={developerRef} sectionId="developer" title="Developers" />
+            <Developer ref={sectionRefs.developer} sectionId="developer" title="Developers" />
             <Start
-                ref={startRef}
+                ref={sectionRefs.star}
                 title="Start"
                 sectionId="start"
                 description="맞춤법 교정하러 가볼까요?"
                 content="교정하러 가기 >"
             />
-            <FloatingButton onClick={scrollToStart} activeSection={activeSection} />
+            <FloatingButton
+                onScrollToStart={() => scrollToRef(sectionRefs.star)}
+                activeSection={activeSection}
+            />
         </div>
     );
 }

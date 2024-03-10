@@ -1,11 +1,11 @@
 import { IoIosArrowDown } from "react-icons/io";
 
 interface FloatingButtonProps {
-    onClick: () => void;
+    onScrollToStart: () => void;
     activeSection: string;
 }
 
-export default function FloatingButton({ onClick, activeSection }: FloatingButtonProps) {
+export default function FloatingButton({ onScrollToStart, activeSection }: FloatingButtonProps) {
     const getStyleBasedOnSection = (section: string): string | null => {
         switch (true) {
             case section.startsWith("advantage"):
@@ -27,7 +27,7 @@ export default function FloatingButton({ onClick, activeSection }: FloatingButto
 
     return (
         <button
-            onClick={onClick}
+            onClick={onScrollToStart}
             type="button"
             className={`fixed bottom-14 right-14 w-36 h-36 rounded-full text-center font-bold text-xl ${style} flex flex-col items-center justify-center`}
         >
