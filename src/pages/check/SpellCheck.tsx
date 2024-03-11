@@ -6,6 +6,7 @@ import { FaArrowRight, FaCircle } from "react-icons/fa";
 import ToggleButton from "../../components/buttons/ToggleButton.tsx";
 import DisabledButton from "../../components/buttons/DisabledButton.tsx";
 import ModifyButton from "../../components/buttons/ModifyButton.tsx";
+import ActivatedButton from "../../components/buttons/ActivatedButton.tsx";
 
 export default function SpellCheck() {
     const [showInfo, setShowInfo] = useState(false);
@@ -61,26 +62,8 @@ export default function SpellCheck() {
                     </div>
                     <div className="flex w-full pt-4 gap-4  text-sm">
                         <DisabledButton />
-                        <button
-                            type="button"
-                            onClick={undefined}
-                            className="flex pl-6 pr-8 py-2 justify-center items-center bg-white rounded-md shadow-btn gap-1"
-                        >
-                            <div className="text-neutral-400">
-                                <GrPowerReset />
-                            </div>
-                            초기화
-                        </button>
-                        <button
-                            type="button"
-                            onClick={undefined}
-                            className="flex pl-4 pr-6 py-2 justify-center items-center bg-white rounded-md shadow-btn gap-1"
-                        >
-                            <div className="text-neutral-400">
-                                <LuCopy />
-                            </div>
-                            전체 복사
-                        </button>
+                        <ActivatedButton icon={<GrPowerReset />} text="초기화" />
+                        <ActivatedButton icon={<LuCopy />} text="전체 복사" />
                     </div>
                 </div>
                 <div className="flex flex-col w-full h-full py-4 pr-4 pl-2">
@@ -133,20 +116,8 @@ export default function SpellCheck() {
                         <div className="flex items-center pl-2 text-my-red">교정 개수 3개</div>
                         <div className="flex gap-4">
                             <DisabledButton />
-                            <button
-                                type="button"
-                                onClick={undefined}
-                                className="flex px-7 py-2 justify-center items-center bg-white rounded-md shadow-btn"
-                            >
-                                전체 수정
-                            </button>
-                            <button
-                                type="button"
-                                onClick={undefined}
-                                className="flex px-7 py-2 justify-center items-center bg-white rounded-md shadow-btn"
-                            >
-                                다시 검사
-                            </button>
+                            <ActivatedButton text="전체 수정" />
+                            <ActivatedButton text="다시 검사" />
                         </div>
                     </div>
                 </div>
