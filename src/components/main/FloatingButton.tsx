@@ -5,25 +5,20 @@ interface FloatingButtonProps {
     activeSection: string;
 }
 
+const sectionStyles: { [key: string]: string | null } = {
+    advantage: "bg-white text-main-1",
+    developer: "bg-white text-black"
+};
+const DEFAULT_STYLE = "bg-main-1 text-white";
+
 export default function FloatingButton({ onScrollToStart, activeSection }: FloatingButtonProps) {
-    const getStyleBasedOnSection = (section: string): string | null => {
-        switch (true) {
-            case section.startsWith("advantage"):
-                return "bg-white text-main-1";
-            case section === "developer":
-                return "bg-white text-black";
-            case section === "start":
-                return null;
-            default:
-                return "bg-main-1 text-white";
-        }
-    };
-
-    const style = getStyleBasedOnSection(activeSection);
-
-    if (style === null) {
+    if (activeSection === "start") {
         return null;
     }
+
+    const style =
+        sectionStyles[activeSection] ||
+        (activeSection.startsWith("advantage") ? sectionStyles["advantage"] : DEFAULT_STYLE);
 
     return (
         <button

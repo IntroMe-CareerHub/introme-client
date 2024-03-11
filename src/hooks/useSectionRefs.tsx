@@ -19,7 +19,7 @@ export function useSectionRefs() {
         advantage_two: advantageTwoRef,
         advantage_three: advantageThreeRef,
         developer: developerRef,
-        star: startRef
+        start: startRef
     };
 
     const scrollToRef = (ref: RefObject<HTMLDivElement>) => {

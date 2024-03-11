@@ -6,7 +6,7 @@ const Start = forwardRef<HTMLDivElement, MainProps>(
     ({ title, sectionId, description, content }, ref) => {
         return (
             <section
-                ref={ref} // ref를 section 요소에 연결
+                ref={ref}
                 id={sectionId}
                 className="bg-white flex flex-col items-center justify-center h-full text-center"
             >

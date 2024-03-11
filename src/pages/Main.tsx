@@ -83,14 +83,14 @@ export default function Main() {
             </Advantage>
             <Developer ref={sectionRefs.developer} sectionId="developer" title="Developers" />
             <Start
-                ref={sectionRefs.star}
+                ref={sectionRefs.start}
                 title="Start"
                 sectionId="start"
                 description="맞춤법 교정하러 가볼까요?"
                 content="교정하러 가기 >"
             />
             <FloatingButton
-                onScrollToStart={() => scrollToRef(sectionRefs.star)}
+                onScrollToStart={() => scrollToRef(sectionRefs.start)}
                 activeSection={activeSection}
             />
         </div>
