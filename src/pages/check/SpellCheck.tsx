@@ -5,6 +5,7 @@ import { AiOutlineInfoCircle } from "react-icons/ai";
 import { FaArrowRight, FaCircle } from "react-icons/fa";
 import ToggleButton from "../../components/buttons/ToggleButton.tsx";
 import DisabledButton from "../../components/buttons/DisabledButton.tsx";
+import ModifyButton from "../../components/buttons/ModifyButton.tsx";
 
 export default function SpellCheck() {
     const [showInfo, setShowInfo] = useState(false);
@@ -113,13 +114,7 @@ export default function SpellCheck() {
                                     <p>특수문자</p>
                                 </div>
                                 <div className="flex justify-end">
-                                    <button
-                                        type="button"
-                                        onClick={undefined}
-                                        className="bg-my-blue py-1.5 px-2.5 rounded-md text-xs text-white"
-                                    >
-                                        삭제
-                                    </button>
+                                    <ModifyButton text="삭제" color="blue" />
                                 </div>
                             </div>
                             <div className="grid grid-cols-3">
@@ -129,13 +124,7 @@ export default function SpellCheck() {
                                     <p className="text-my-purple">안녕</p>
                                 </div>
                                 <div className="flex justify-end">
-                                    <button
-                                        type="button"
-                                        onClick={undefined}
-                                        className="bg-my-purple py-1.5 px-2.5 rounded-md text-xs text-white"
-                                    >
-                                        수정
-                                    </button>
+                                    <ModifyButton text="수정" color="purple" />
                                 </div>
                             </div>
                         </div>
