@@ -19,7 +19,7 @@ export default function SpellCheck() {
     return (
         <div className="flex flex-col items-center h-screen px-4 pb-4">
             <div className="w-full p-6 text-center">Header</div>
-            <div className="flex justify-center items-center bg-main-3 bg-opacity-15 w-full h-main rounded-xl shadow-main">
+            <div className="flex justify-center items-center bg-main-3 bg-opacity-15 w-full h-check-page rounded-xl shadow-main">
                 <div className="flex flex-col w-full h-full py-4 pl-4 pr-2">
                     <div className="grid grid-cols-2 pt-2 pb-3">
                         <p className="text-lg">원문</p>
