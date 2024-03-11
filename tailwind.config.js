@@ -16,6 +16,9 @@ export default {
                 main: "0px 0px 6px 0px rgb(0 0 0 / 0.2)",
                 btn: "0px 2px 3px 1px rgb(0 0 0 / 0.2)",
                 toggle: "0px 4px 3px -2px rgb(0 0 0 / 0.2)"
+            },
+            height: {
+                main: "91.1%"
             }
         },
         fontFamily: {

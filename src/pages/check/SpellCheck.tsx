@@ -10,12 +10,18 @@ import CorrectionItem from "../../components/check/CorrectionItem.tsx";
 
 export default function SpellCheck() {
     const [showInfo, setShowInfo] = useState(false);
+    const correctionItems = [
+        { color: "blue", textBefore: "!!!!!", textAfter: "특수문자" },
+        { color: "purple", textBefore: "안뇽", textAfter: "안녕" },
+        { color: "green", textBefore: "첫번째", textAfter: "첫 번째" },
+        { color: "red", textBefore: "맛춥뻡", textAfter: "맞춤법" }
+    ];
     return (
-        <div className="flex flex-col justify-center items-center h-screen px-4 pb-4">
-            <div className="w-full p-6 text-center ">Header</div>
-            <div className="flex justify-center items-center bg-main-3 bg-opacity-15 w-full flex-grow rounded-xl shadow-main">
+        <div className="flex flex-col items-center h-screen px-4 pb-4">
+            <div className="w-full p-6 text-center">Header</div>
+            <div className="flex justify-center items-center bg-main-3 bg-opacity-15 w-full h-main rounded-xl shadow-main">
                 <div className="flex flex-col w-full h-full py-4 pl-4 pr-2">
-                    <div className="grid grid-cols-2  pt-2 pb-3">
+                    <div className="grid grid-cols-2 pt-2 pb-3">
                         <p className="text-lg">원문</p>
                         <div className="flex gap-4 justify-end items-center">
                             <div className="flex gap-2 justify-end items-center">
@@ -51,7 +57,7 @@ export default function SpellCheck() {
                             </div>
                         </div>
                     </div>
-                    <div className="flex flex-col w-full h-full bg-white rounded-xl shadow-main  px-4 pt-4 pb-2 gap-2">
+                    <div className="flex flex-col w-full h-full bg-white rounded-xl shadow-main px-4 pt-4 pb-2 gap-2">
                         <textarea
                             placeholder="검사할 내용을 입력하세요."
                             className="text-sm grow resize-none focus:outline-none"
@@ -60,14 +66,14 @@ export default function SpellCheck() {
                             0/20000(글자수) | 0/40000(byte)
                         </p>
                     </div>
-                    <div className="flex w-full pt-4 gap-4  text-sm">
+                    <div className="flex w-full pt-4 gap-4 text-sm">
                         <DisabledButton />
                         <ActivatedButton icon={<GrPowerReset />} text="초기화" />
                         <ActivatedButton icon={<LuCopy />} text="전체 복사" />
                     </div>
                 </div>
                 <div className="flex flex-col w-full h-full py-4 pr-4 pl-2">
-                    <div className="flex flex-row justify-between ">
+                    <div className="flex flex-row justify-between">
                         <p className="text-lg pt-2 pb-3">교정 결과</p>
                         <div className="grid grid-cols-2 grid-rows-2 text-xs py-2 pr-2">
                             <div className="flex text-my-red items-center gap-2">
@@ -88,12 +94,16 @@ export default function SpellCheck() {
                             </div>
                         </div>
                     </div>
-                    <div className="w-full h-full bg-white rounded-xl shadow-main  p-4 overflow-auto">
-                        <div className="flex flex-col w-full h-full text-sm gap-3">
-                            <CorrectionItem color="blue" textBefore="!!!!!" textAfter="특수문자" />
-                            <CorrectionItem color="purple" textBefore="안뇽" textAfter="안녕" />
-                            <CorrectionItem color="green" textBefore="첫번째" textAfter="첫 번째" />
-                            <CorrectionItem color="red" textBefore="맛춥뻡" textAfter="맞춤법" />
+                    <div className="w-full h-full bg-white rounded-xl shadow-main p-4 overflow-hidden">
+                        <div className="flex flex-col h-full max-h-full text-sm gap-3 overflow-auto">
+                            {correctionItems.map((item, index) => (
+                                <CorrectionItem
+                                    key={index}
+                                    color={item.color}
+                                    textBefore={item.textBefore}
+                                    textAfter={item.textAfter}
+                                />
+                            ))}
                         </div>
                     </div>
                     <div className="flex w-full pt-4 justify-between text-sm">
