@@ -2,11 +2,11 @@ import { useState } from "react";
 import { GrPowerReset } from "react-icons/gr";
 import { LuCopy } from "react-icons/lu";
 import { AiOutlineInfoCircle } from "react-icons/ai";
-import { FaArrowRight, FaCircle } from "react-icons/fa";
+import { FaCircle } from "react-icons/fa";
 import ToggleButton from "../../components/buttons/ToggleButton.tsx";
 import DisabledButton from "../../components/buttons/DisabledButton.tsx";
-import ModifyButton from "../../components/buttons/ModifyButton.tsx";
 import ActivatedButton from "../../components/buttons/ActivatedButton.tsx";
+import CorrectionItem from "../../components/check/CorrectionItem.tsx";
 
 export default function SpellCheck() {
     const [showInfo, setShowInfo] = useState(false);
@@ -90,29 +90,13 @@ export default function SpellCheck() {
                     </div>
                     <div className="w-full h-full bg-white rounded-xl shadow-main  p-4 overflow-auto">
                         <div className="flex flex-col w-full h-full text-sm gap-3">
-                            <div className="grid grid-cols-3">
-                                <p className="text-my-blue">!!!!!</p>
-                                <div className="flex gap-2 items-center">
-                                    <FaArrowRight />
-                                    <p>특수문자</p>
-                                </div>
-                                <div className="flex justify-end">
-                                    <ModifyButton text="삭제" color="blue" />
-                                </div>
-                            </div>
-                            <div className="grid grid-cols-3">
-                                <p className="text-my-purple">안뇽</p>
-                                <div className="flex gap-2 items-center">
-                                    <FaArrowRight />
-                                    <p className="text-my-purple">안녕</p>
-                                </div>
-                                <div className="flex justify-end">
-                                    <ModifyButton text="수정" color="purple" />
-                                </div>
-                            </div>
+                            <CorrectionItem color="blue" textBefore="!!!!!" textAfter="특수문자" />
+                            <CorrectionItem color="purple" textBefore="안뇽" textAfter="안녕" />
+                            <CorrectionItem color="green" textBefore="첫번째" textAfter="첫 번째" />
+                            <CorrectionItem color="red" textBefore="맛춥뻡" textAfter="맞춤법" />
                         </div>
                     </div>
-                    <div className="flex w-full pt-4 justify-between  text-sm">
+                    <div className="flex w-full pt-4 justify-between text-sm">
                         <div className="flex items-center pl-2 text-my-red">교정 개수 3개</div>
                         <div className="flex gap-4">
                             <DisabledButton />
