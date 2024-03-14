@@ -4,12 +4,10 @@ import FloatingButton from "../components/main/FloatingButton";
 import Functions from "../components/main/Functions";
 import Info from "../components/main/Info";
 import Start from "../components/main/Start";
-import useScrollSection from "../hooks/useScrollSection";
-import { useSectionRefs } from "../hooks/useSectionRefs";
+import { useScroll } from "../contexts/ScrollContext";
 
 export default function Main() {
-    const { containerRef, sectionRefs, scrollToRef } = useSectionRefs();
-    const activeSection = useScrollSection(containerRef, sectionRefs);
+    const { sectionRefs, scrollToRef, activeSection, containerRef } = useScroll();
 
     return (
         <div ref={containerRef} className="snap-y snap-mandatory h-screen overflow-auto">
@@ -90,7 +88,7 @@ export default function Main() {
                 content="교정하러 가기 >"
             />
             <FloatingButton
-                onScrollToStart={() => scrollToRef(sectionRefs.start)}
+                onScrollToStart={() => scrollToRef("start")}
                 activeSection={activeSection}
             />
         </div>
