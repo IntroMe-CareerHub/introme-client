@@ -55,8 +55,8 @@ export default function Header() {
 
     const mainHeaderItems = [
         { key: "info", text: "IntroMe" },
-        { key: "function", text: "Function" },
-        { key: "advantage", text: "Advantages" },
+        { key: "function_one", text: "Function" },
+        { key: "advantage_one", text: "Advantages" },
         { key: "developer", text: "Developers" },
         { key: "start", text: "Start" }
     ];
@@ -78,7 +78,7 @@ export default function Header() {
                               <li
                                   key={item.key}
                                   className={getMainHeaderClass(item.key)}
-                                  onClick={() => scrollToRef(item.key)}
+                                  onClick={() => scrollToRef && scrollToRef(item.key)}
                               >
                                   {item.text}
                               </li>
