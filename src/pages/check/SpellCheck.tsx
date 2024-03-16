@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { SetStateAction, useState } from "react";
 import { GrPowerReset } from "react-icons/gr";
 import { LuCopy } from "react-icons/lu";
 import { AiOutlineInfoCircle } from "react-icons/ai";
@@ -10,6 +10,14 @@ import CorrectionItem from "../../components/check/CorrectionItem.tsx";
 
 export default function SpellCheck() {
     const [showInfo, setShowInfo] = useState(false);
+    const [inputText, setInputText] = useState("");
+    const [isSpellCheckClicked, setIsSpellCheckClicked] = useState(false);
+    const handleInputChange = (e: { target: { value: SetStateAction<string> } }) => {
+        setInputText(e.target.value);
+    };
+    const handleSpellCheckClick = () => {
+        setIsSpellCheckClicked(true);
+    };
     const correctionItems = [
         { color: "blue", textBefore: "!!!!!", textAfter: "특수문자" },
         { color: "purple", textBefore: "안뇽", textAfter: "안녕" },
@@ -60,59 +68,86 @@ export default function SpellCheck() {
                     <div className="flex flex-col w-full h-full bg-white rounded-xl shadow-main px-4 pt-4 pb-2 gap-2">
                         <textarea
                             placeholder="검사할 내용을 입력하세요."
-                            className="text-sm grow resize-none focus:outline-none"
+                            className="text-sm grow resize-none focus:outline-none disabled:bg-white"
+                            value={inputText}
+                            onChange={handleInputChange}
+                            disabled={isSpellCheckClicked}
                         />
                         <p className="flex h-13 text-xs text-zinc-500 justify-end">
                             0/20000(글자수) | 0/40000(byte)
                         </p>
                     </div>
-                    <div className="flex w-full pt-4 gap-4 text-sm">
-                        <DisabledButton />
-                        <ActivatedButton icon={<GrPowerReset />} text="초기화" />
-                        <ActivatedButton icon={<LuCopy />} text="전체 복사" />
-                    </div>
+                    {inputText.length > 0 ? (
+                        <div className="flex w-full pt-4 gap-4 text-sm">
+                            <ActivatedButton icon={<GrPowerReset />} text="초기화" />
+                            <ActivatedButton icon={<LuCopy />} text="전체 복사" />
+                        </div>
+                    ) : (
+                        <div className="flex w-full pt-4 gap-4 text-sm">
+                            <DisabledButton />
+                            <DisabledButton />
+                        </div>
+                    )}
                 </div>
                 <div className="flex flex-col w-full h-full py-4 pr-4 pl-2">
                     <div className="flex flex-row justify-between">
                         <p className="text-lg pt-2 pb-3">교정 결과</p>
-                        <div className="grid grid-cols-2 grid-rows-2 text-xs py-2 pr-2">
-                            <div className="flex text-my-red items-center gap-2">
-                                <FaCircle size="6" />
-                                맞춤법
+                        {isSpellCheckClicked && (
+                            <div className="grid grid-cols-2 grid-rows-2 text-xs py-2 pr-2">
+                                <div className="flex text-my-red items-center gap-2">
+                                    <FaCircle size="6" />
+                                    맞춤법
+                                </div>
+                                <div className="flex text-my-purple items-center gap-2">
+                                    <FaCircle size="6" />
+                                    표준어 의심
+                                </div>
+                                <div className="flex text-my-green items-center gap-2">
+                                    <FaCircle size="6" />
+                                    띄어쓰기
+                                </div>
+                                <div className="flex text-my-blue items-center gap-2">
+                                    <FaCircle size="6" />
+                                    특수문자
+                                </div>
                             </div>
-                            <div className="flex text-my-purple items-center gap-2">
-                                <FaCircle size="6" />
-                                표준어 의심
-                            </div>
-                            <div className="flex text-my-green items-center gap-2">
-                                <FaCircle size="6" />
-                                띄어쓰기
-                            </div>
-                            <div className="flex text-my-blue items-center gap-2">
-                                <FaCircle size="6" />
-                                특수문자
-                            </div>
-                        </div>
+                        )}
                     </div>
                     <div className="w-full h-full bg-white rounded-xl shadow-main p-4 overflow-hidden">
-                        <div className="flex flex-col h-full max-h-full text-sm gap-3 overflow-auto">
-                            {correctionItems.map((item, index) => (
-                                <CorrectionItem
-                                    key={index}
-                                    color={item.color}
-                                    textBefore={item.textBefore}
-                                    textAfter={item.textAfter}
-                                />
-                            ))}
-                        </div>
+                        {isSpellCheckClicked && (
+                            <div className="flex flex-col h-full max-h-full text-sm gap-3 overflow-auto">
+                                {correctionItems.map((item, index) => (
+                                    <CorrectionItem
+                                        key={index}
+                                        color={item.color}
+                                        textBefore={item.textBefore}
+                                        textAfter={item.textAfter}
+                                    />
+                                ))}
+                            </div>
+                        )}
                     </div>
                     <div className="flex w-full pt-4 justify-between text-sm">
                         <div className="flex items-center pl-2 text-my-red">교정 개수 3개</div>
-                        <div className="flex gap-4">
-                            <DisabledButton />
-                            <ActivatedButton text="전체 수정" />
-                            <ActivatedButton text="다시 검사" />
-                        </div>
+                        {inputText.length > 0 ? (
+                            <div className="flex gap-4">
+                                {isSpellCheckClicked ? (
+                                    <>
+                                        <ActivatedButton text="전체 수정" />
+                                        <ActivatedButton text="다시 검사" />
+                                    </>
+                                ) : (
+                                    <ActivatedButton
+                                        text="맞춤법 검사"
+                                        onClick={handleSpellCheckClick}
+                                    />
+                                )}
+                            </div>
+                        ) : (
+                            <div className="flex gap-4">
+                                <DisabledButton />
+                            </div>
+                        )}
                     </div>
                 </div>
             </div>

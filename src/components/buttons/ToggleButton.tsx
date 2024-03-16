@@ -1,9 +1,9 @@
 import { useState } from "react";
 
 export default function ToggleButton() {
-    const [isOn, setisOn] = useState(false);
+    const [isOn, setIsOn] = useState(false);
     const toggleHandler = () => {
-        setisOn(!isOn);
+        setIsOn(!isOn);
     };
 
     return (

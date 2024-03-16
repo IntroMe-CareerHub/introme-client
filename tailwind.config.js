@@ -20,7 +20,8 @@ export default {
             },
             height: {
                 "check-page": "91.1%"
-            }
+            },
+            backgroundColor: ["disabled"]
         },
         fontFamily: {
             GmarketSansBold: ["GmarketSansBold"],
