@@ -9,9 +9,12 @@ export default function Header() {
     useEffect(() => {
         if (pathname === "/") {
             setActiveSection && setActiveSection("info");
+        } else if (pathname.startsWith("/check")) {
+            setActiveSection && setActiveSection("check");
+        } else {
+            setActiveSection && setActiveSection("");
         }
     }, [pathname, setActiveSection]);
-
     const getTextColorClass = (_sectionKey: string): string => {
         if (activeSection === "start") {
             return "text-black";
@@ -55,8 +58,8 @@ export default function Header() {
 
     const mainHeaderItems = [
         { key: "info", text: "IntroMe" },
-        { key: "function_one", text: "Function" },
-        { key: "advantage_one", text: "Advantages" },
+        { key: "function", text: "Function" },
+        { key: "advantage", text: "Advantages" },
         { key: "developer", text: "Developers" },
         { key: "start", text: "Start" }
     ];
@@ -69,6 +72,17 @@ export default function Header() {
         { path: "/4", text: "로그인" }
     ];
 
+    const mapToFirstSubSection = (sectionKey: string) => {
+        switch (sectionKey) {
+            case "function":
+                return "function_one";
+            case "advantage":
+                return "advantage_one";
+            default:
+                return sectionKey;
+        }
+    };
+
     return (
         <header className="bg-transparent fixed top-0 z-50 w-full">
             <nav>
@@ -78,7 +92,9 @@ export default function Header() {
                               <li
                                   key={item.key}
                                   className={getMainHeaderClass(item.key)}
-                                  onClick={() => scrollToRef && scrollToRef(item.key)}
+                                  onClick={() =>
+                                      scrollToRef && scrollToRef(mapToFirstSubSection(item.key))
+                                  }
                               >
                                   {item.text}
                               </li>
