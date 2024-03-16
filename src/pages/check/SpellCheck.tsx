@@ -22,12 +22,24 @@ export default function SpellCheck() {
         { color: "blue", textBefore: "!!!!!", textAfter: "특수문자" },
         { color: "purple", textBefore: "안뇽", textAfter: "안녕" },
         { color: "green", textBefore: "첫번째", textAfter: "첫 번째" },
+        { color: "red", textBefore: "맛춥뻡", textAfter: "맞춤법" },
+        { color: "blue", textBefore: "!!!!!", textAfter: "특수문자" },
+        { color: "purple", textBefore: "안뇽", textAfter: "안녕" },
+        { color: "green", textBefore: "첫번째", textAfter: "첫 번째" },
+        { color: "red", textBefore: "맛춥뻡", textAfter: "맞춤법" },
+        { color: "blue", textBefore: "!!!!!", textAfter: "특수문자" },
+        { color: "purple", textBefore: "안뇽", textAfter: "안녕" },
+        { color: "green", textBefore: "첫번째", textAfter: "첫 번째" },
+        { color: "red", textBefore: "맛춥뻡", textAfter: "맞춤법" },
+        { color: "blue", textBefore: "!!!!!", textAfter: "특수문자" },
+        { color: "purple", textBefore: "안뇽", textAfter: "안녕" },
+        { color: "green", textBefore: "첫번째", textAfter: "첫 번째" },
         { color: "red", textBefore: "맛춥뻡", textAfter: "맞춤법" }
     ];
     return (
         <div className="flex flex-col items-center h-screen px-4 pb-4">
             <div className="w-full p-6 text-center">Header</div>
-            <div className="flex justify-center items-center bg-main-3 bg-opacity-15 w-full h-check-page rounded-xl shadow-main">
+            <div className="grid lg:grid-cols-2 sm:grid-cols-1 grid-cols-1 justify-center items-center bg-main-3 bg-opacity-15 w-full h-check-page rounded-xl shadow-main">
                 <div className="flex flex-col w-full h-full py-4 pl-4 pr-2">
                     <div className="grid grid-cols-2 pt-2 pb-3">
                         <p className="text-lg">원문</p>
@@ -89,7 +101,7 @@ export default function SpellCheck() {
                         </div>
                     )}
                 </div>
-                <div className="flex flex-col w-full h-full py-4 pr-4 pl-2">
+                <div className="flex flex-col w-full h-full py-4 pr-4 pl-2 overflow-auto">
                     <div className="flex flex-row justify-between">
                         <p className="text-lg pt-2 pb-3">교정 결과</p>
                         {isSpellCheckClicked && (
@@ -128,7 +140,7 @@ export default function SpellCheck() {
                         )}
                     </div>
                     <div className="flex w-full pt-4 justify-between text-sm">
-                        <div className="flex items-center pl-2 text-my-red">교정 개수 3개</div>
+                        <div className="flex items-center pl-2 text-my-red">교정 개수 0개</div>
                         {inputText.length > 0 ? (
                             <div className="flex gap-4">
                                 {isSpellCheckClicked ? (
