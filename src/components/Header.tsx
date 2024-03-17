@@ -6,56 +6,6 @@ export default function Header() {
     const { scrollToRef, activeSection, setActiveSection } = useScroll();
     const { pathname } = useLocation();
 
-    useEffect(() => {
-        if (pathname === "/") {
-            setActiveSection && setActiveSection("info");
-        } else if (pathname.startsWith("/check")) {
-            setActiveSection && setActiveSection("check");
-        } else {
-            setActiveSection && setActiveSection("");
-        }
-    }, [pathname, setActiveSection]);
-    const getTextColorClass = (_sectionKey: string): string => {
-        if (activeSection === "start") {
-            return "text-black";
-        }
-
-        const isActiveSectionTextWhite =
-            activeSection === "info" ||
-            activeSection.startsWith("advantage") ||
-            activeSection === "developer";
-
-        if (isActiveSectionTextWhite) {
-            return "text-white";
-        }
-
-        return "text-black";
-    };
-
-    const getMainHeaderClass = (sectionKey: string) => {
-        const isActive = activeSection.startsWith(sectionKey) || activeSection === sectionKey;
-        let classNames = `cursor-pointer ${getTextColorClass(sectionKey)}`;
-
-        if (isActive) {
-            if (sectionKey.startsWith("advantage")) {
-                classNames = "font-GmarketSansBold text-white border-b-2 border-white";
-            } else {
-                classNames = "font-GmarketSansBold text-main-1 border-b-2 border-main-1";
-            }
-        }
-
-        return classNames;
-    };
-
-    const getCheckHeaderClass = (path: string): string =>
-        pathname === path
-            ? "cursor-pointer font-GmarketSansBold text-main-1 border-b-2 border-main-1"
-            : "cursor-pointer";
-
-    const isMainRoute = !["/check", "/1", "/2", "/3", "/4"].some(route =>
-        pathname.startsWith(route)
-    );
-
     const mainHeaderItems = [
         { key: "info", text: "IntroMe" },
         { key: "function", text: "Function" },
@@ -72,6 +22,30 @@ export default function Header() {
         { path: "/4", text: "로그인" }
     ];
 
+    useEffect(() => {
+        setActiveSection &&
+            setActiveSection(
+                pathname === "/" ? "info" : pathname.startsWith("/check") ? "check" : ""
+            );
+    }, [pathname, setActiveSection]);
+
+    const isActiveSectionTextWhite =
+        ["info", "advantage", "developer"].includes(activeSection) ||
+        activeSection.startsWith("advantage");
+
+    const getHeaderClass = (sectionKey: string, isMainHeader: boolean) => {
+        const isActive = isMainHeader
+            ? activeSection.startsWith(sectionKey) || activeSection === sectionKey
+            : pathname === `/${sectionKey}`;
+        if (isActive) {
+            if (sectionKey === "advantage" || activeSection.startsWith("advantage")) {
+                return "cursor-pointer font-GmarketSansBold text-white border-b-2 border-white";
+            }
+            return "cursor-pointer font-GmarketSansBold text-main-1 border-b-2 border-main-1";
+        }
+        return `cursor-pointer ${isActiveSectionTextWhite ? "text-white" : "text-black"}`;
+    };
+
     const mapToFirstSubSection = (sectionKey: string) => {
         switch (sectionKey) {
             case "function":
@@ -83,31 +57,31 @@ export default function Header() {
         }
     };
 
+    const renderHeaderItems = () => {
+        if (["/check", "/1", "/2", "/3", "/4"].some(route => pathname.startsWith(route))) {
+            return checkHeaderLinks.map(({ path, text }) => (
+                <Link key={path} to={path} className={getHeaderClass(path.replace("/", ""), false)}>
+                    {text}
+                </Link>
+            ));
+        } else {
+            return mainHeaderItems.map(({ key, text }) => (
+                <li
+                    key={key}
+                    className={getHeaderClass(key, true)}
+                    onClick={() => scrollToRef && scrollToRef(mapToFirstSubSection(key))}
+                >
+                    {text}
+                </li>
+            ));
+        }
+    };
+
     return (
         <header className="bg-transparent fixed top-0 z-50 w-full">
             <nav>
                 <ul className="flex text-xl py-7 items-center justify-center space-x-24">
-                    {isMainRoute
-                        ? mainHeaderItems.map(item => (
-                              <li
-                                  key={item.key}
-                                  className={getMainHeaderClass(item.key)}
-                                  onClick={() =>
-                                      scrollToRef && scrollToRef(mapToFirstSubSection(item.key))
-                                  }
-                              >
-                                  {item.text}
-                              </li>
-                          ))
-                        : checkHeaderLinks.map(link => (
-                              <Link
-                                  key={link.path}
-                                  to={link.path}
-                                  className={getCheckHeaderClass(link.path)}
-                              >
-                                  {link.text}
-                              </Link>
-                          ))}
+                    {renderHeaderItems()}
                 </ul>
             </nav>
         </header>
