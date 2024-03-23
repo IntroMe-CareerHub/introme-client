@@ -18,6 +18,14 @@ export default function SpellCheck() {
     const handleSpellCheckClick = () => {
         setIsSpellCheckClicked(true);
     };
+    const handleCopyToClipboard = async () => {
+        try {
+            await navigator.clipboard.writeText(inputText);
+            console.log("Success to copy");
+        } catch (error) {
+            console.error("Fail to copy: ", error);
+        }
+    };
     const correctionItems = [
         { color: "blue", textBefore: "!!!!!", textAfter: "특수문자" },
         { color: "purple", textBefore: "안뇽", textAfter: "안녕" },
@@ -92,7 +100,11 @@ export default function SpellCheck() {
                     {inputText.length > 0 ? (
                         <div className="flex w-full pt-4 gap-4 text-sm">
                             <ActivatedButton icon={<GrPowerReset />} text="초기화" />
-                            <ActivatedButton icon={<LuCopy />} text="전체 복사" />
+                            <ActivatedButton
+                                icon={<LuCopy />}
+                                text="전체 복사"
+                                onClick={handleCopyToClipboard}
+                            />
                         </div>
                     ) : (
                         <div className="flex w-full pt-4 gap-4 text-sm">
