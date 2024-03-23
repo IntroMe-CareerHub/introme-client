@@ -26,6 +26,9 @@ export default function SpellCheck() {
             console.error("Fail to copy: ", error);
         }
     };
+    const handleResetTextarea = () => {
+        setInputText("");
+    };
     const correctionItems = [
         { color: "blue", textBefore: "!!!!!", textAfter: "특수문자" },
         { color: "purple", textBefore: "안뇽", textAfter: "안녕" },
@@ -99,7 +102,11 @@ export default function SpellCheck() {
                     </div>
                     {inputText.length > 0 ? (
                         <div className="flex w-full pt-4 gap-4 text-sm">
-                            <ActivatedButton icon={<GrPowerReset />} text="초기화" />
+                            <ActivatedButton
+                                icon={<GrPowerReset />}
+                                text="초기화"
+                                onClick={handleResetTextarea}
+                            />
                             <ActivatedButton
                                 icon={<LuCopy />}
                                 text="전체 복사"
