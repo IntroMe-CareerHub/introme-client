@@ -13,6 +13,7 @@ export default function SpellCheck() {
     const [inputText, setInputText] = useState<string>("");
     const [isSpellCheckClicked, setIsSpellCheckClicked] = useState<boolean>(false);
     const [isSpecialCharactersToggleOn, setIsSpecialCharactersToggleOn] = useState<boolean>(false);
+    const [specialCharactersCount, setSpecialCharactersCount] = useState<number>(0);
     const [correctionItems, setCorrectionItems] = useState<
         { color: string; textBefore: string; textAfter: string }[]
     >([]);
@@ -27,6 +28,7 @@ export default function SpellCheck() {
     const handleResetCorrectionItems = () => {
         setCorrectionItems([]);
         setIsSpellCheckClicked(!isSpellCheckClicked);
+        setSpecialCharactersCount(0);
     };
     const handleSpellCheckClick = () => {
         handleResetCorrectionItems();
@@ -37,7 +39,8 @@ export default function SpellCheck() {
                 textBefore: character,
                 textAfter: "특수문자"
             }));
-            setCorrectionItems(prevItems => [...prevItems, ...newCorrectionItems]);
+            setCorrectionItems(newCorrectionItems);
+            setSpecialCharactersCount(newCorrectionItems.length);
         }
     };
     const handleResetTextarea = () => {
@@ -170,7 +173,9 @@ export default function SpellCheck() {
                         )}
                     </div>
                     <div className="flex w-full pt-4 justify-between text-sm">
-                        <div className="flex items-center pl-2 text-my-red">교정 개수 0개</div>
+                        <div className="flex items-center pl-2 text-my-red">
+                            교정 개수 {specialCharactersCount}개
+                        </div>
                         {inputText.length > 0 ? (
                             <div className="flex gap-4">
                                 {isSpellCheckClicked ? (
