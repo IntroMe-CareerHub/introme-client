@@ -16,7 +16,7 @@ export default function SpellCheck() {
         setInputText(e.target.value);
     };
     const handleSpellCheckClick = () => {
-        setIsSpellCheckClicked(true);
+        setIsSpellCheckClicked(prevState => !prevState);
     };
     const handleCopyToClipboard = async () => {
         try {
@@ -28,6 +28,7 @@ export default function SpellCheck() {
     };
     const handleResetTextarea = () => {
         setInputText("");
+        if (isSpellCheckClicked) setIsSpellCheckClicked(prevState => !prevState);
     };
     const correctionItems = [
         { color: "blue", textBefore: "!!!!!", textAfter: "특수문자" },
@@ -165,7 +166,10 @@ export default function SpellCheck() {
                                 {isSpellCheckClicked ? (
                                     <>
                                         <ActivatedButton text="전체 수정" />
-                                        <ActivatedButton text="다시 검사" />
+                                        <ActivatedButton
+                                            text="다시 검사"
+                                            onClick={handleSpellCheckClick}
+                                        />
                                     </>
                                 ) : (
                                     <ActivatedButton
