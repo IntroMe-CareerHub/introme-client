@@ -12,11 +12,34 @@ export default function SpellCheck() {
     const [showInfo, setShowInfo] = useState(false);
     const [inputText, setInputText] = useState("");
     const [isSpellCheckClicked, setIsSpellCheckClicked] = useState(false);
+    const [correctionItems, setCorrectionItems] = useState<
+        { color: string; textBefore: string; textAfter: string }[]
+    >([]);
+    const extractSpecialCharacters = () => {
+        const specialCharactersRegex = /[^a-zA-Z0-9ㄱ-ㅎㅏ-ㅣ가-힣,. \t\n]/g;
+        const specialCharactersList = inputText.match(specialCharactersRegex);
+        return specialCharactersList ? specialCharactersList : [];
+    };
     const handleInputChange = (e: { target: { value: SetStateAction<string> } }) => {
         setInputText(e.target.value);
     };
-    const handleSpellCheckClick = () => {
+    const handleResetCorrectionItems = () => {
+        setCorrectionItems([]);
         setIsSpellCheckClicked(prevState => !prevState);
+    };
+    const handleSpellCheckClick = () => {
+        handleResetCorrectionItems();
+        const specialCharactersList = extractSpecialCharacters();
+        const newCorrectionItems = specialCharactersList.map(character => ({
+            color: "blue",
+            textBefore: character,
+            textAfter: "특수문자"
+        }));
+        setCorrectionItems(prevItems => [...prevItems, ...newCorrectionItems]);
+    };
+    const handleResetTextarea = () => {
+        setInputText("");
+        if (isSpellCheckClicked) handleResetCorrectionItems();
     };
     const handleCopyToClipboard = async () => {
         try {
@@ -26,28 +49,6 @@ export default function SpellCheck() {
             console.error("Fail to copy: ", error);
         }
     };
-    const handleResetTextarea = () => {
-        setInputText("");
-        if (isSpellCheckClicked) setIsSpellCheckClicked(prevState => !prevState);
-    };
-    const correctionItems = [
-        { color: "blue", textBefore: "!!!!!", textAfter: "특수문자" },
-        { color: "purple", textBefore: "안뇽", textAfter: "안녕" },
-        { color: "green", textBefore: "첫번째", textAfter: "첫 번째" },
-        { color: "red", textBefore: "맛춥뻡", textAfter: "맞춤법" },
-        { color: "blue", textBefore: "!!!!!", textAfter: "특수문자" },
-        { color: "purple", textBefore: "안뇽", textAfter: "안녕" },
-        { color: "green", textBefore: "첫번째", textAfter: "첫 번째" },
-        { color: "red", textBefore: "맛춥뻡", textAfter: "맞춤법" },
-        { color: "blue", textBefore: "!!!!!", textAfter: "특수문자" },
-        { color: "purple", textBefore: "안뇽", textAfter: "안녕" },
-        { color: "green", textBefore: "첫번째", textAfter: "첫 번째" },
-        { color: "red", textBefore: "맛춥뻡", textAfter: "맞춤법" },
-        { color: "blue", textBefore: "!!!!!", textAfter: "특수문자" },
-        { color: "purple", textBefore: "안뇽", textAfter: "안녕" },
-        { color: "green", textBefore: "첫번째", textAfter: "첫 번째" },
-        { color: "red", textBefore: "맛춥뻡", textAfter: "맞춤법" }
-    ];
     return (
         <div className="flex flex-col items-center h-screen px-4 pb-4">
             <div className="w-full p-6 text-center">Header</div>
@@ -168,7 +169,7 @@ export default function SpellCheck() {
                                         <ActivatedButton text="전체 수정" />
                                         <ActivatedButton
                                             text="다시 검사"
-                                            onClick={handleSpellCheckClick}
+                                            onClick={handleResetCorrectionItems}
                                         />
                                     </>
                                 ) : (
