@@ -9,9 +9,10 @@ import ActivatedButton from "../../components/buttons/ActivatedButton.tsx";
 import CorrectionItem from "../../components/check/CorrectionItem.tsx";
 
 export default function SpellCheck() {
-    const [showInfo, setShowInfo] = useState(false);
-    const [inputText, setInputText] = useState("");
-    const [isSpellCheckClicked, setIsSpellCheckClicked] = useState(false);
+    const [showInfo, setShowInfo] = useState<boolean>(false);
+    const [inputText, setInputText] = useState<string>("");
+    const [isSpellCheckClicked, setIsSpellCheckClicked] = useState<boolean>(false);
+    const [isSpecialCharactersToggleOn, setIsSpecialCharactersToggleOn] = useState<boolean>(false);
     const [correctionItems, setCorrectionItems] = useState<
         { color: string; textBefore: string; textAfter: string }[]
     >([]);
@@ -25,17 +26,19 @@ export default function SpellCheck() {
     };
     const handleResetCorrectionItems = () => {
         setCorrectionItems([]);
-        setIsSpellCheckClicked(prevState => !prevState);
+        setIsSpellCheckClicked(!isSpellCheckClicked);
     };
     const handleSpellCheckClick = () => {
         handleResetCorrectionItems();
-        const specialCharactersList = extractSpecialCharacters();
-        const newCorrectionItems = specialCharactersList.map(character => ({
-            color: "blue",
-            textBefore: character,
-            textAfter: "특수문자"
-        }));
-        setCorrectionItems(prevItems => [...prevItems, ...newCorrectionItems]);
+        if (isSpecialCharactersToggleOn) {
+            const specialCharactersList = extractSpecialCharacters();
+            const newCorrectionItems = specialCharactersList.map(character => ({
+                color: "blue",
+                textBefore: character,
+                textAfter: "특수문자"
+            }));
+            setCorrectionItems(prevItems => [...prevItems, ...newCorrectionItems]);
+        }
     };
     const handleResetTextarea = () => {
         setInputText("");
@@ -48,6 +51,9 @@ export default function SpellCheck() {
         } catch (error) {
             console.error("Fail to copy: ", error);
         }
+    };
+    const handleToggleSpecialCharacters = () => {
+        setIsSpecialCharactersToggleOn(!isSpecialCharactersToggleOn);
     };
     return (
         <div className="flex flex-col items-center h-screen px-4 pb-4">
@@ -86,7 +92,10 @@ export default function SpellCheck() {
                                         </>
                                     )}
                                 </div>
-                                <ToggleButton />
+                                <ToggleButton
+                                    includeSpecialCharacters={isSpecialCharactersToggleOn}
+                                    handleToggleSpecialCharacters={handleToggleSpecialCharacters}
+                                />
                             </div>
                         </div>
                     </div>
