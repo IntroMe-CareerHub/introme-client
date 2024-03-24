@@ -1,6 +1,8 @@
+import { MouseEventHandler } from "react";
+
 interface ToggleButtonProps {
     includeSpecialCharacters?: boolean;
-    handleToggleSpecialCharacters?: () => void;
+    handleToggleSpecialCharacters?: MouseEventHandler<HTMLDivElement> | undefined;
 }
 export default function ToggleButton({
     includeSpecialCharacters,

@@ -58,6 +58,11 @@ export default function SpellCheck() {
     const handleToggleSpecialCharacters = () => {
         setIsSpecialCharactersToggleOn(!isSpecialCharactersToggleOn);
     };
+    const handleModifyAllClick = () => {
+        setCorrectionItems([]);
+        setInputText(prevText => prevText.replace(/[^a-zA-Z0-9ㄱ-ㅎㅏ-ㅣ가-힣,. \t\n]/g, ""));
+        setSpecialCharactersCount(0);
+    };
     return (
         <div className="flex flex-col items-center h-screen px-4 pb-4">
             <div className="w-full p-6 text-center">Header</div>
@@ -180,7 +185,10 @@ export default function SpellCheck() {
                             <div className="flex gap-4">
                                 {isSpellCheckClicked ? (
                                     <>
-                                        <ActivatedButton text="전체 수정" />
+                                        <ActivatedButton
+                                            text="전체 수정"
+                                            onClick={handleModifyAllClick}
+                                        />
                                         <ActivatedButton
                                             text="다시 검사"
                                             onClick={handleResetCorrectionItems}
