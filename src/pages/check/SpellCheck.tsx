@@ -63,6 +63,11 @@ export default function SpellCheck() {
         setInputText(prevText => prevText.replace(/[^a-zA-Z0-9ㄱ-ㅎㅏ-ㅣ가-힣,. \t\n]/g, ""));
         setSpecialCharactersCount(0);
     };
+    // const handleDeleteSpecialCharacter = (index: number) => {
+    //     const newCorrectionItems = [...correctionItems];
+    //     newCorrectionItems.splice(index, 1);
+    //     setCorrectionItems(newCorrectionItems);
+    // };
     return (
         <div className="flex flex-col items-center h-screen px-4 pb-4">
             <div className="w-full p-6 text-center">Header</div>
@@ -109,7 +114,7 @@ export default function SpellCheck() {
                     </div>
                     <div className="flex flex-col w-full h-full bg-white rounded-xl shadow-main px-4 pt-4 pb-2 gap-2">
                         <textarea
-                            placeholder="검사할 내용을 입력하세요."
+                            placeholder={!isSpellCheckClicked ? "검사할 내용을 입력하세요." : ""}
                             className="text-sm grow resize-none focus:outline-none disabled:bg-white"
                             value={inputText}
                             onChange={handleInputChange}
@@ -119,7 +124,12 @@ export default function SpellCheck() {
                             0/20000(글자수) | 0/40000(byte)
                         </p>
                     </div>
-                    {inputText.length > 0 ? (
+                    {!isSpellCheckClicked && inputText.length === 0 ? (
+                        <div className="flex w-full pt-4 gap-4 text-sm">
+                            <DisabledButton />
+                            <DisabledButton />
+                        </div>
+                    ) : (
                         <div className="flex w-full pt-4 gap-4 text-sm">
                             <ActivatedButton
                                 icon={<GrPowerReset />}
@@ -131,11 +141,6 @@ export default function SpellCheck() {
                                 text="전체 복사"
                                 onClick={handleCopyToClipboard}
                             />
-                        </div>
-                    ) : (
-                        <div className="flex w-full pt-4 gap-4 text-sm">
-                            <DisabledButton />
-                            <DisabledButton />
                         </div>
                     )}
                 </div>
@@ -172,6 +177,10 @@ export default function SpellCheck() {
                                         color={item.color}
                                         textBefore={item.textBefore}
                                         textAfter={item.textAfter}
+                                        // onDeleteSpecialCharacter={() =>
+                                        //     handleDeleteSpecialCharacter(index)
+                                        // }
+                                        onDeleteSpecialCharacter={() => undefined}
                                     />
                                 ))}
                             </div>
@@ -181,7 +190,11 @@ export default function SpellCheck() {
                         <div className="flex items-center pl-2 text-my-red">
                             교정 개수 {specialCharactersCount}개
                         </div>
-                        {inputText.length > 0 ? (
+                        {!isSpellCheckClicked && inputText.length === 0 ? (
+                            <div className="flex gap-4">
+                                <DisabledButton />
+                            </div>
+                        ) : (
                             <div className="flex gap-4">
                                 {isSpellCheckClicked ? (
                                     <>
@@ -200,10 +213,6 @@ export default function SpellCheck() {
                                         onClick={handleSpellCheckClick}
                                     />
                                 )}
-                            </div>
-                        ) : (
-                            <div className="flex gap-4">
-                                <DisabledButton />
                             </div>
                         )}
                     </div>
