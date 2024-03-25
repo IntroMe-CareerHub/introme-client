@@ -63,11 +63,33 @@ export default function SpellCheck() {
         setInputText(prevText => prevText.replace(/[^a-zA-Z0-9ㄱ-ㅎㅏ-ㅣ가-힣,. \t\n]/g, ""));
         setSpecialCharactersCount(0);
     };
-    // const handleDeleteSpecialCharacter = (index: number) => {
-    //     const newCorrectionItems = [...correctionItems];
-    //     newCorrectionItems.splice(index, 1);
-    //     setCorrectionItems(newCorrectionItems);
-    // };
+    const handleDeleteSpecialCharacter = (index: number, character: string) => {
+        let cnt = 0;
+        for (let i = 0; i < correctionItems.length; i++) {
+            if (correctionItems[i].textBefore === character) cnt++;
+            if (i === index) break;
+        }
+
+        const newCorrectionItems = [...correctionItems];
+        newCorrectionItems.splice(index, 1);
+        setCorrectionItems(newCorrectionItems);
+
+        setInputText(prevText => {
+            let count = 0;
+            let newText = prevText;
+            for (let i = 0; i < prevText.length; i++) {
+                if (prevText[i] === character) {
+                    count++;
+                    if (count === cnt) {
+                        newText = prevText.slice(0, i) + prevText.slice(i + 1);
+                        break;
+                    }
+                }
+            }
+            return newText;
+        });
+        setSpecialCharactersCount(specialCharactersCount - 1);
+    };
     return (
         <div className="flex flex-col items-center h-screen px-4 pb-4">
             <div className="w-full p-6 text-center">Header</div>
@@ -177,10 +199,9 @@ export default function SpellCheck() {
                                         color={item.color}
                                         textBefore={item.textBefore}
                                         textAfter={item.textAfter}
-                                        // onDeleteSpecialCharacter={() =>
-                                        //     handleDeleteSpecialCharacter(index)
-                                        // }
-                                        onDeleteSpecialCharacter={() => undefined}
+                                        onDeleteSpecialCharacter={() =>
+                                            handleDeleteSpecialCharacter(index, item.textBefore)
+                                        }
                                     />
                                 ))}
                             </div>

@@ -5,9 +5,15 @@ type CorrectionItemProps = {
     color: string;
     textBefore: string;
     textAfter: string;
+    onDeleteSpecialCharacter: () => void;
 };
 
-export default function CorrectionItem({ color, textBefore, textAfter }: CorrectionItemProps) {
+export default function CorrectionItem({
+    color,
+    textBefore,
+    textAfter,
+    onDeleteSpecialCharacter
+}: CorrectionItemProps) {
     const buttonText = color === "blue" ? "삭제" : "수정";
     return (
         <div className="grid grid-cols-3">
@@ -17,7 +23,7 @@ export default function CorrectionItem({ color, textBefore, textAfter }: Correct
                 <p className={color !== "blue" ? `text-my-${color}` : ""}>{textAfter}</p>
             </div>
             <div className="flex justify-end">
-                <ModifyButton text={buttonText} color={color} />
+                <ModifyButton text={buttonText} color={color} onClick={onDeleteSpecialCharacter} />
             </div>
         </div>
     );
