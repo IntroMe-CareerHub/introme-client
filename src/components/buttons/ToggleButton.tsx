@@ -1,21 +1,23 @@
-import { useState } from "react";
+import { MouseEventHandler } from "react";
 
-export default function ToggleButton() {
-    const [isOn, setisOn] = useState(false);
-    const toggleHandler = () => {
-        setisOn(!isOn);
-    };
-
+interface ToggleButtonProps {
+    includeSpecialCharacters?: boolean;
+    handleToggleSpecialCharacters?: MouseEventHandler<HTMLDivElement> | undefined;
+}
+export default function ToggleButton({
+    includeSpecialCharacters,
+    handleToggleSpecialCharacters
+}: ToggleButtonProps) {
     return (
         <div>
             <div
                 className={`relative cursor-pointer w-7 h-4 rounded-full
-                ${isOn ? "bg-main-1 transition-all duration-500" : "bg-gray-300"}`}
-                onClick={toggleHandler}
+                ${includeSpecialCharacters ? "bg-main-1 transition-all duration-500" : "bg-gray-300"}`}
+                onClick={handleToggleSpecialCharacters}
             >
                 <div
                     className={`absolute top-0.5 left-0.5 bg-white rounded-full transition-all duration-500 w-3 h-3
-                    ${isOn ? "left-3.5" : ""}`}
+                    ${includeSpecialCharacters ? "left-3.5" : ""}`}
                 />
             </div>
         </div>

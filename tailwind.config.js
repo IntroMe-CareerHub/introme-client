@@ -10,13 +10,18 @@ export default {
                 "my-blue": "#0085FF",
                 "my-green": "#0D9C18",
                 "my-purple": "#6A35FF",
-                "my-red": "#EA3323"
+                "my-red": "#EA3323",
+                "my-delete": "#FF4B4B"
             },
             boxShadow: {
                 main: "0px 0px 6px 0px rgb(0 0 0 / 0.2)",
                 btn: "0px 2px 3px 1px rgb(0 0 0 / 0.2)",
                 toggle: "0px 4px 3px -2px rgb(0 0 0 / 0.2)"
-            }
+            },
+            height: {
+                "check-page": "91.1%"
+            },
+            backgroundColor: ["disabled"]
         },
         fontFamily: {
             GmarketSansBold: ["GmarketSansBold"],
