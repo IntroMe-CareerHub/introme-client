@@ -8,6 +8,20 @@ import DisabledButton from "../../components/buttons/DisabledButton.tsx";
 
 export default function SpellCheck() {
     const [showInfo, setShowInfo] = useState(false);
+    const [text, setText] = useState<string>("");
+    const [includeSpaces, setIncludeSpaces] = useState<boolean>(true);
+
+    const handleTextChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+        setText(e.target.value);
+    };
+
+    const handleToggleSpaces = () => {
+        setIncludeSpaces(!includeSpaces);
+    };
+
+    const textLength = includeSpaces ? text.length : text.replace(/ /g, "").length;
+    const textSizeInBytes = new TextEncoder().encode(text).length;
+
     return (
         <div className="flex flex-col justify-center items-center h-screen px-4 pb-4">
             <div className="w-full p-6 text-center ">Header</div>
@@ -18,7 +32,10 @@ export default function SpellCheck() {
                         <div className="flex gap-4 justify-end items-center">
                             <div className="flex gap-2 justify-end items-center">
                                 <p className="text-xs">공백</p>
-                                <ToggleButton />
+                                <ToggleButton
+                                    includeSpaces={includeSpaces}
+                                    handleToggleSpaces={handleToggleSpaces}
+                                />
                             </div>
                             <div className="flex gap-2 justify-end items-center">
                                 <div className="relative flex gap-1">
@@ -53,9 +70,11 @@ export default function SpellCheck() {
                         <textarea
                             placeholder="검사할 내용을 입력하세요."
                             className="text-sm grow resize-none focus:outline-none"
+                            value={text}
+                            onChange={handleTextChange}
                         />
                         <p className="flex h-13 text-xs text-zinc-500 justify-end">
-                            0/20000(글자수) | 0/40000(byte)
+                            {textLength}/20000(글자수) | {textSizeInBytes}/40000(byte)
                         </p>
                     </div>
                     <div className="flex w-full pt-4 gap-4  text-sm">
