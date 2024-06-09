@@ -1,9 +1,7 @@
-import { useEffect, useState } from "react";
-import { User } from "../model/User.tsx";
+import { PropsWithChildren } from "react";
 
-export default const MainFrame = () => {
-    const [user, setUser] = useState<User | null>(null)
-    useEffect(() => {
+interface Props {}
 
-    }, []);
+export default function MainFrame(props: PropsWithChildren<Props>) {
+    return <div>{props.children}</div>;
 }
