@@ -23,7 +23,7 @@ export async function del<T>(url: string, config?: AxiosRequestConfig) {
 axios.interceptors.request.use(
     config => {
         config.headers = Object.assign(config.headers, {
-            Authorization: localStorage.getItem("AccessToken")
+            Authorization: `Bearer ` + localStorage.getItem("AccessToken")
         });
         return config;
     },

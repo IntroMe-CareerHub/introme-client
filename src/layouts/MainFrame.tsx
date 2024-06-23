@@ -1,7 +1,15 @@
-import { PropsWithChildren } from "react";
+interface IntroMeUser {
+    id: number;
+    email: string;
+    name: string;
+    picture?: string;
+}
 
-interface Props {}
+interface MainFrameProps {
+    user: IntroMeUser | null;
+    children: React.ReactNode;
+}
 
-export default function MainFrame(props: PropsWithChildren<Props>) {
-    return <div>{props.children}</div>;
+export default function MainFrame({ user, children }: MainFrameProps) {
+    return <>{user ? <div>{children}</div> : <div>Loading...</div>}</>;
 }
