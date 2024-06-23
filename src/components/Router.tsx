@@ -5,7 +5,6 @@ import CompanyList from "../pages/company/CompanyList";
 import CompanyAdd from "../pages/company/CompanyAdd";
 import TalentInfo from "../pages/talent/TalentInfo.tsx";
 import Layout from "../layouts/Layout.tsx";
-
 export default function Router() {
     return (
         <Routes>
