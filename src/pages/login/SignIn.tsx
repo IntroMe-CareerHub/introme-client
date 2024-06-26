@@ -6,7 +6,7 @@ const SignIn = () => {
     };
 
     return (
-        <div className="container">
+        <div className="sign-in-container">
             <div className="sign-in-card">
                 <h2>Intro me</h2>
                 <button className="google-login-button" onClick={handleLoginClick}>
