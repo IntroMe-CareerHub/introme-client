@@ -5,7 +5,6 @@ const SignInSuccess = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        console.log("this is url" + window.location.search);
         const urlParams = new URLSearchParams(window.location.search);
         const token = urlParams.get("accessToken");
         const storedToken = localStorage.getItem("AccessToken");
