@@ -13,13 +13,14 @@ export default function TalentInfo() {
     useEffect(() => {
         (async () => {
             try {
-                const data = await CompanyAPI.getCompanyTalentInfo(companyId); // TODO: 기업 인재상 리스트 페이지에서 CompanyId 넘겨받기
+                const data = await CompanyAPI.getCompanyTalentInfo(companyId);
+                console.log("data:", data);
                 setCompanyData(data);
             } catch (error) {
                 console.error("Error:", error);
             }
         })();
-    }, []);
+    }, [companyId]);
 
     // TODO: Skeleton UI 적용
     if (!companyData) return <div></div>;
