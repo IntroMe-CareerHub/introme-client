@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { CompanyAPI } from "../../apis/Company.ts";
 import { CompanyData } from "../../types/talent";
 import { useParams } from "react-router-dom";
+import axios from "axios";
 
 export default function TalentInfo() {
     const [companyData, setCompanyData] = useState<CompanyData | null>(null);
@@ -17,7 +18,11 @@ export default function TalentInfo() {
                 console.log("data:", data);
                 setCompanyData(data);
             } catch (error) {
-                console.error("Error:", error);
+                if (axios.isAxiosError(error)) {
+                    console.error("Axios Error:", error);
+                } else {
+                    console.error("Error:", error);
+                }
             }
         })();
     }, [companyId]);

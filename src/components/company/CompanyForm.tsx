@@ -1,10 +1,10 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-import { useState } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { CompanyProps, Talent } from "../../types/company";
 import CompanyInput from "./CompanyInput";
 import CompanyTalentInput from "./CompanyTalentInput";
 import { CompanyAPI } from "../../apis/Company";
+import axios from "axios";
 
 export default function CompanyForm() {
     const navigate = useNavigate();
@@ -25,8 +25,12 @@ export default function CompanyForm() {
         try {
             await CompanyAPI.createCompany(company);
             navigate("/company/list");
-        } catch (error: any) {
-            console.error("Error:", error);
+        } catch (error) {
+            if (axios.isAxiosError(error)) {
+                console.error("Axios Error:", error);
+            } else {
+                console.error("Error:", error);
+            }
         }
     };
 
