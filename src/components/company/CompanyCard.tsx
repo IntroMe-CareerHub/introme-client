@@ -14,8 +14,10 @@ export default function CompanyCard({ id, image, location, url, name, talents }:
             className="border border-[#EAEBEC] rounded-2xl cursor-pointer"
         >
             <div className="p-6">
-                <div className="flex  items-center">
-                    <div className="bg-slate-500 w-[60px] h-[60px] mr-3" />
+                <div className="flex items-center">
+                    <div className="bg-slate-500 w-[60px] h-[60px] mr-3">
+                        <img src={image} alt={"image"} />
+                    </div>
                     <div className="flex flex-col space-y-2">
                         <h3 className="font-semibold">{name}</h3>
                         <span className="text-xs text-[#8A8A8A]">{location}</span>
@@ -32,8 +34,8 @@ export default function CompanyCard({ id, image, location, url, name, talents }:
                 <div className="w-full h-[1px] bg-[#F0F0F0] my-3" />
                 <div className="flex flex-col space-y-2">
                     {talents.map(talent => (
-                        <span key={talent.id} className="font-semibold text-xs">
-                            {talent.icon} {talent.keyword}
+                        <span key={talent.id} className="flex gap-2 font-semibold text-xs">
+                            <img src={talent.icon} alt={"icon"} /> {talent.keyword}
                         </span>
                     ))}
                 </div>
