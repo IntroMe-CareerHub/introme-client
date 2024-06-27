@@ -1,3 +1,4 @@
+import React from "react";
 import { RiShareBoxLine } from "react-icons/ri";
 import { CompanyCardProps } from "../../types/company";
 import { Link } from "react-router-dom";

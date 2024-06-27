@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { CompanyAPI } from "../../apis/Company.ts";
 import { CompanyData } from "../../types/talent";
 import { useParams } from "react-router-dom";
+import Loading from "../../components/Loading.tsx";
 import axios from "axios";
 
 export default function TalentInfo() {
@@ -27,8 +28,8 @@ export default function TalentInfo() {
         })();
     }, [companyId]);
 
-    // TODO: Skeleton UI 적용
-    if (!companyData) return <div></div>;
+    // TODO: Skeleton UI 적용 (임시 로딩)
+    if (!companyData) return <Loading />;
 
     return (
         <div>
