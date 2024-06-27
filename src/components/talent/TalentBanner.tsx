@@ -1,6 +1,6 @@
 import NavigationLinksButton from "./buttons/NavigationLinksButton.tsx";
 import TalentIconSlider from "./TalentIconSlider.tsx";
-import { TalentBannerProps } from "../../types/talent";
+import { TalentBannerProps } from "../../types/company";
 
 export default function TalentBanner({ companyData }: TalentBannerProps) {
     const { name, image, identityColor, companyInfo, updatedAt, talents } = companyData;

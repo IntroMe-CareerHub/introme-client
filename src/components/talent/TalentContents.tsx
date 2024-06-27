@@ -1,6 +1,6 @@
 import { motion, Variants } from "framer-motion";
 import { useEffect } from "react";
-import { TalentContentsProps } from "../../types/talent";
+import { TalentContentsProps } from "../../types/company";
 
 const cardVariants: Variants = {
     offscreen: {

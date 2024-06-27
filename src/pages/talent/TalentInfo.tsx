@@ -3,7 +3,7 @@ import TalentContents from "../../components/talent/TalentContents.tsx";
 import TalentFooter from "../../components/talent/TalentFooter.tsx";
 import { useEffect, useState } from "react";
 import { CompanyAPI } from "../../apis/Company.ts";
-import { CompanyData } from "../../types/talent";
+import { CompanyData } from "../../types/company";
 import { useParams } from "react-router-dom";
 import Loading from "../../components/Loading.tsx";
 import axios from "axios";

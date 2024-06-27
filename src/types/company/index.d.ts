@@ -2,8 +2,9 @@ export interface Talent {
     id?: number;
     keyword: string;
     description: string;
-    baseUrl?: string;
     icon?: string;
+    permission?: string;
+    baseUrl?: string;
     [key: string]: string | undefined | number;
 }
 
@@ -23,11 +24,22 @@ export interface CompanyCardProps {
     talents: Talent[];
 }
 
+// 기업 및 인재상 제출
 export interface CompanyProps {
     id?: number;
     name: string;
     image: string;
     companyInfo: CompanyInfo;
+    talents: Talent[];
+}
+
+// 기업 인재상 조회
+export interface CompanyData {
+    name: string;
+    image: string;
+    identityColor: string;
+    companyInfo: CompanyInfo;
+    updatedAt: string;
     talents: Talent[];
 }
 
@@ -53,3 +65,21 @@ export interface CompanyTalentInputProps {
     handleTalentChange: (index: number, field: string, value: string) => void;
     handleRemoveTalent: (id: number | undefined) => void;
 }
+
+export interface TalentBannerProps {
+    companyData: CompanyData;
+}
+
+export interface TalentIconSliderProps {
+    talents: { icon?: string }[];
+}
+
+export interface TalentContentsProps {
+    talentData: Talent[];
+}
+
+export type NavigationLinksBtnProps = {
+    text: string;
+    isBlue?: boolean;
+    url?: string | null;
+};

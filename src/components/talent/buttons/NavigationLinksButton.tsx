@@ -1,4 +1,4 @@
-import { NavigationLinksBtnProps } from "../../../types/talent";
+import { NavigationLinksBtnProps } from "../../../types/company";
 
 export default function NavigationLinksButton({ text, isBlue, url }: NavigationLinksBtnProps) {
     if (!url) return null;

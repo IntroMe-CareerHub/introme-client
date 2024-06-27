@@ -1,5 +1,5 @@
 import axios, { AxiosInstance } from "axios";
-import { CompanyData } from "../types/talent";
+import { CompanyData } from "../types/company";
 import { CompanyCardProps, CompanyProps } from "../types/company";
 
 export class CompanyAPI {
