@@ -1,14 +1,4 @@
-interface CompanyInputFieldProps {
-    id: string;
-    name: string;
-    label: string;
-    required: boolean;
-    placeholder: string;
-    maxLength: number;
-    value: string;
-    context?: string;
-    onChange: (name: string, value: string, context?: string) => void;
-}
+import { CompanyInputFieldProps } from "../../types/company";
 
 export default function CompanyInput({
     id,

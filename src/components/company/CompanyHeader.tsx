@@ -1,11 +1,7 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { FaAngleDown, FaPlus } from "react-icons/fa6";
 import { IoSearch } from "react-icons/io5";
 import { Link } from "react-router-dom";
-
-interface CompanyHeaderProps {
-    totalElements: number | undefined;
-}
+import { CompanyHeaderProps } from "../../types/company";
 
 export default function CompanyHeader({ totalElements }: CompanyHeaderProps) {
     return (
