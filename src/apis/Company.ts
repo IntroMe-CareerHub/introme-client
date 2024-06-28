@@ -1,5 +1,5 @@
 import axios, { AxiosInstance } from "axios";
-import { CompanyData } from "../types/company";
+import { CompanyData, Talent } from "../types/company";
 import { CompanyCardProps, CompanyProps } from "../types/company";
 
 export class CompanyAPI {
@@ -18,7 +18,13 @@ export class CompanyAPI {
     }
 
     public static async createCompany(company: CompanyProps): Promise<void> {
-        await this.instance.post("/add", company);
+        await this.instance.post("/company/submit", company);
+    }
+
+    public static async appendCompanyTalent(companyId: number, talent: Talent): Promise<void> {
+        await this.instance.post("/company/talent/submit", talent, {
+            params: { companyId }
+        });
     }
 
     // public static async fetchCompanies(
