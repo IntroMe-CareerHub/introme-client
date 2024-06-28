@@ -3,13 +3,13 @@ import TalentContents from "../../components/talent/TalentContents.tsx";
 import TalentFooter from "../../components/talent/TalentFooter.tsx";
 import { useEffect, useState } from "react";
 import { CompanyAPI } from "../../apis/Company.ts";
-import { CompanyData } from "../../types/company";
+import { CompanyProps } from "../../types/company";
 import { useParams } from "react-router-dom";
 import Loading from "../../components/Loading.tsx";
 import axios from "axios";
 
 export default function TalentInfo() {
-    const [companyData, setCompanyData] = useState<CompanyData | null>(null);
+    const [companyData, setCompanyData] = useState<CompanyProps | null>(null);
     const { companyId } = useParams();
 
     useEffect(() => {

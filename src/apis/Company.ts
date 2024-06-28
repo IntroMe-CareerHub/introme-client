@@ -1,6 +1,5 @@
 import axios, { AxiosInstance } from "axios";
-import { CompanyData, Talent } from "../types/company";
-import { CompanyCardProps, CompanyProps } from "../types/company";
+import { CompanyCardProps, Talent, CompanyProps } from "../types/company";
 
 export class CompanyAPI {
     static instance: AxiosInstance = axios.create({
@@ -10,11 +9,11 @@ export class CompanyAPI {
         headers: { "Content-Type": "application/json" }
     });
 
-    public static async getCompanyTalentInfo(companyId: string | undefined): Promise<CompanyData> {
+    public static async getCompanyTalentInfo(companyId: string | undefined): Promise<CompanyProps> {
         if (!companyId) throw new Error("Error");
         const response = await this.instance.get(`/company/talent/${companyId}`);
         if (response.status !== 200) throw new Error("Error");
-        return response.data as CompanyData;
+        return response.data as CompanyProps;
     }
 
     public static async getCompanyName(companyId: string): Promise<string> {

@@ -29,18 +29,9 @@ export interface CompanyProps {
     id?: number;
     name: string;
     image: string;
+    identityColor?: string;
     companyInfo: CompanyInfo;
-    talents: Talent[];
-}
-
-// 기업 인재상 조회
-export interface CompanyData {
-    id: number;
-    name: string;
-    image: string;
-    identityColor: string;
-    companyInfo: CompanyInfo;
-    updatedAt: string;
+    updatedAt?: string;
     talents: Talent[];
 }
 
@@ -68,7 +59,7 @@ export interface CompanyTalentInputProps {
 }
 
 export interface TalentBannerProps {
-    companyData: CompanyData;
+    companyData: CompanyProps;
 }
 
 export interface TalentIconSliderProps {

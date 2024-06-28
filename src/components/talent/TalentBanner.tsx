@@ -14,7 +14,7 @@ export default function TalentBanner({ companyData }: TalentBannerProps) {
     };
 
     return (
-        <div className={`bg-[${identityColor}] pt-28 px-9 pb-8`}>
+        <div style={{ backgroundColor: identityColor || "#EEEEEE" }} className="pt-28 px-9 pb-8">
             <div className="flex flex-col">
                 <div className="flex justify-between">
                     <div className="flex pt-10 pr-4 w-36 justify-end">
@@ -47,7 +47,7 @@ export default function TalentBanner({ companyData }: TalentBannerProps) {
                     <NavigationLinksButton text="기술 블로그" url={techBlog} />
                 </div>
                 <div className="flex justify-end">
-                    마지막 업데이트: {new Date(updatedAt).toLocaleString()}
+                    {updatedAt && <>마지막 업데이트: {new Date(updatedAt).toLocaleString()}</>}
                 </div>
             </div>
         </div>
