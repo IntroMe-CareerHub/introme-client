@@ -4,8 +4,8 @@ export interface Talent {
     description: string;
     icon?: string;
     permission?: string;
-    baseUrl?: string;
-    // [key: string]: string | undefined | number;
+    baseUrl: string;
+    [key: string]: string | undefined | number;
 }
 
 export interface CompanyInfo {
@@ -84,3 +84,14 @@ export type NavigationLinksBtnProps = {
     isBlue?: boolean;
     url?: string | null;
 };
+
+export interface TalentInputFieldProps {
+    id: string;
+    label: string;
+    required: boolean;
+    placeholder: string;
+    maxLength: number;
+    value: string;
+    onChange?: (name: string, value: string, context?: string) => void;
+    readOnly?: boolean;
+}

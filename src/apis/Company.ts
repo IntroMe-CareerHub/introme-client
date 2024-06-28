@@ -17,6 +17,11 @@ export class CompanyAPI {
         return response.data as CompanyData;
     }
 
+    public static async getCompanyName(companyId: string): Promise<string> {
+        const companyData = await this.getCompanyTalentInfo(companyId);
+        return companyData.name;
+    }
+
     public static async createCompany(company: CompanyProps): Promise<void> {
         await this.instance.post("/company/submit", company);
     }
