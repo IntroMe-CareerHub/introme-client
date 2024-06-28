@@ -5,7 +5,7 @@ export interface Talent {
     icon?: string;
     permission?: string;
     baseUrl?: string;
-    [key: string]: string | undefined | number;
+    // [key: string]: string | undefined | number;
 }
 
 export interface CompanyInfo {
@@ -35,6 +35,7 @@ export interface CompanyProps {
 
 // 기업 인재상 조회
 export interface CompanyData {
+    id: number;
     name: string;
     image: string;
     identityColor: string;

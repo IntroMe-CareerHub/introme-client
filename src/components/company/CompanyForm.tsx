@@ -166,7 +166,7 @@ export default function CompanyForm() {
                 type="submit"
                 className="text-white bg-[#0085FF] px-6 py-2 rounded-lg ml-auto flex"
             >
-                제출 하기
+                제출하기
             </button>
         </form>
     );
