@@ -15,11 +15,6 @@ export default function TalentForm() {
         baseUrl: ""
     });
 
-    // input test
-    useEffect(() => {
-        console.log(talent);
-    }, [talent]);
-
     useEffect(() => {
         (async () => {
             if (companyId) {
@@ -45,7 +40,7 @@ export default function TalentForm() {
         }
         try {
             await CompanyAPI.appendCompanyTalent(Number(companyId), talent);
-            navigate(`/company/${companyId}`);
+            navigate(`/company/talent/${companyId}`);
         } catch (error) {
             if (axios.isAxiosError(error)) {
                 console.error("Axios Error:", error);
