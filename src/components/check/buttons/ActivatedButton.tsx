@@ -1,10 +1,5 @@
-import { MouseEventHandler, ReactNode } from "react";
+import { ActivatedBtnProps } from "../../../types/check";
 
-type ActivatedBtnProps = {
-    icon?: ReactNode;
-    text: string;
-    onClick?: MouseEventHandler<HTMLButtonElement> | undefined;
-};
 export default function ActivatedButton({ icon, text, onClick }: ActivatedBtnProps) {
     return (
         <button

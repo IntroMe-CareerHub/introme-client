@@ -1,12 +1,6 @@
 import { FaArrowRight } from "react-icons/fa";
-import ModifyButton from "../buttons/ModifyButton.tsx";
-
-type CorrectionItemProps = {
-    color: string;
-    textBefore: string;
-    textAfter: string;
-    onDeleteSpecialCharacter: () => void;
-};
+import ModifyButton from "./buttons/ModifyButton.tsx";
+import { CorrectionItemProps } from "../../types/check";
 
 export default function CorrectionItem({
     color,

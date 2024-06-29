@@ -1,0 +1,1187 @@
+{
+  "company": [
+    {
+      "id": 1,
+      "name": "카카오",
+      "image": ".icon",
+      "location": "서울특별시 강서구",
+      "url": "www.naver.com",
+      "talents": [
+        {
+          "id": 1,
+          "keyword": "고객중심",
+          "description": "고객이 원하는 최고의 경험을 만든다.",
+          "icon": "icon.png"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "신한은행",
+      "image": ".icon",
+      "location": "서울특별시 강남구",
+      "url": "www.naver.com",
+      "talents": [
+        {
+          "id": 2,
+          "keyword": "주도적 몰입",
+          "description": "자율과 책임에 기반하여 성과를 낸다.",
+          "icon": "icon.png"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "카카오",
+      "image": ".icon",
+      "location": "서울특별시 강서구",
+      "url": "www.naver.com",
+      "talents": [
+        {
+          "id": 3,
+          "keyword": "고객중심",
+          "description": "고객이 원하는 최고의 경험을 만든다.",
+          "icon": "icon.png"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "신한은행",
+      "image": ".icon",
+      "location": "서울특별시 강남구",
+      "url": "www.naver.com",
+      "talents": [
+        {
+          "id": 4,
+          "keyword": "주도적 몰입",
+          "description": "자율과 책임에 기반하여 성과를 낸다.",
+          "icon": "icon.png"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "카카오",
+      "image": ".icon",
+      "location": "서울특별시 강서구",
+      "url": "www.naver.com",
+      "talents": [
+        {
+          "id": 5,
+          "keyword": "고객중심",
+          "description": "고객이 원하는 최고의 경험을 만든다.",
+          "icon": "icon.png"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "신한은행",
+      "image": ".icon",
+      "location": "서울특별시 강남구",
+      "url": "www.naver.com",
+      "talents": [
+        {
+          "id": 6,
+          "keyword": "주도적 몰입",
+          "description": "자율과 책임에 기반하여 성과를 낸다.",
+          "icon": "icon.png"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "name": "카카오",
+      "image": ".icon",
+      "location": "서울특별시 강서구",
+      "url": "www.naver.com",
+      "talents": [
+        {
+          "id": 7,
+          "keyword": "고객중심",
+          "description": "고객이 원하는 최고의 경험을 만든다.",
+          "icon": "icon.png"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "name": "신한은행",
+      "image": ".icon",
+      "location": "서울특별시 강남구",
+      "url": "www.naver.com",
+      "talents": [
+        {
+          "id": 8,
+          "keyword": "주도적 몰입",
+          "description": "자율과 책임에 기반하여 성과를 낸다.",
+          "icon": "icon.png"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "name": "카카오",
+      "image": ".icon",
+      "location": "서울특별시 강서구",
+      "url": "www.naver.com",
+      "talents": [
+        {
+          "id": 9,
+          "keyword": "고객중심",
+          "description": "고객이 원하는 최고의 경험을 만든다.",
+          "icon": "icon.png"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "name": "신한은행",
+      "image": ".icon",
+      "location": "서울특별시 강남구",
+      "url": "www.naver.com",
+      "talents": [
+        {
+          "id": 10,
+          "keyword": "주도적 몰입",
+          "description": "자율과 책임에 기반하여 성과를 낸다.",
+          "icon": "icon.png"
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "name": "카카오",
+      "image": ".icon",
+      "location": "서울특별시 강서구",
+      "url": "www.naver.com",
+      "talents": [
+        {
+          "id": 11,
+          "keyword": "고객중심",
+          "description": "고객이 원하는 최고의 경험을 만든다.",
+          "icon": "icon.png"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "name": "신한은행",
+      "image": ".icon",
+      "location": "서울특별시 강남구",
+      "url": "www.naver.com",
+      "talents": [
+        {
+          "id": 12,
+          "keyword": "주도적 몰입",
+          "description": "자율과 책임에 기반하여 성과를 낸다.",
+          "icon": "icon.png"
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "name": "카카오",
+      "image": ".icon",
+      "location": "서울특별시 강서구",
+      "url": "www.naver.com",
+      "talents": [
+        {
+          "id": 13,
+          "keyword": "고객중심",
+          "description": "고객이 원하는 최고의 경험을 만든다.",
+          "icon": "icon.png"
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "name": "신한은행",
+      "image": ".icon",
+      "location": "서울특별시 강남구",
+      "url": "www.naver.com",
+      "talents": [
+        {
+          "id": 14,
+          "keyword": "주도적 몰입",
+          "description": "자율과 책임에 기반하여 성과를 낸다.",
+          "icon": "icon.png"
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "name": "카카오",
+      "image": ".icon",
+      "location": "서울특별시 강서구",
+      "url": "www.naver.com",
+      "talents": [
+        {
+          "id": 1,
+          "keyword": "고객중심",
+          "description": "고객이 원하는 최고의 경험을 만든다.",
+          "icon": "icon.png"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "신한은행",
+      "image": ".icon",
+      "location": "서울특별시 강남구",
+      "url": "www.naver.com",
+      "talents": [
+        {
+          "id": 2,
+          "keyword": "주도적 몰입",
+          "description": "자율과 책임에 기반하여 성과를 낸다.",
+          "icon": "icon.png"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "카카오",
+      "image": ".icon",
+      "location": "서울특별시 강서구",
+      "url": "www.naver.com",
+      "talents": [
+        {
+          "id": 3,
+          "keyword": "고객중심",
+          "description": "고객이 원하는 최고의 경험을 만든다.",
+          "icon": "icon.png"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "신한은행",
+      "image": ".icon",
+      "location": "서울특별시 강남구",
+      "url": "www.naver.com",
+      "talents": [
+        {
+          "id": 4,
+          "keyword": "주도적 몰입",
+          "description": "자율과 책임에 기반하여 성과를 낸다.",
+          "icon": "icon.png"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "카카오",
+      "image": ".icon",
+      "location": "서울특별시 강서구",
+      "url": "www.naver.com",
+      "talents": [
+        {
+          "id": 5,
+          "keyword": "고객중심",
+          "description": "고객이 원하는 최고의 경험을 만든다.",
+          "icon": "icon.png"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "신한은행",
+      "image": ".icon",
+      "location": "서울특별시 강남구",
+      "url": "www.naver.com",
+      "talents": [
+        {
+          "id": 6,
+          "keyword": "주도적 몰입",
+          "description": "자율과 책임에 기반하여 성과를 낸다.",
+          "icon": "icon.png"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "name": "카카오",
+      "image": ".icon",
+      "location": "서울특별시 강서구",
+      "url": "www.naver.com",
+      "talents": [
+        {
+          "id": 7,
+          "keyword": "고객중심",
+          "description": "고객이 원하는 최고의 경험을 만든다.",
+          "icon": "icon.png"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "name": "신한은행",
+      "image": ".icon",
+      "location": "서울특별시 강남구",
+      "url": "www.naver.com",
+      "talents": [
+        {
+          "id": 8,
+          "keyword": "주도적 몰입",
+          "description": "자율과 책임에 기반하여 성과를 낸다.",
+          "icon": "icon.png"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "name": "카카오",
+      "image": ".icon",
+      "location": "서울특별시 강서구",
+      "url": "www.naver.com",
+      "talents": [
+        {
+          "id": 9,
+          "keyword": "고객중심",
+          "description": "고객이 원하는 최고의 경험을 만든다.",
+          "icon": "icon.png"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "name": "신한은행",
+      "image": ".icon",
+      "location": "서울특별시 강남구",
+      "url": "www.naver.com",
+      "talents": [
+        {
+          "id": 10,
+          "keyword": "주도적 몰입",
+          "description": "자율과 책임에 기반하여 성과를 낸다.",
+          "icon": "icon.png"
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "name": "카카오",
+      "image": ".icon",
+      "location": "서울특별시 강서구",
+      "url": "www.naver.com",
+      "talents": [
+        {
+          "id": 11,
+          "keyword": "고객중심",
+          "description": "고객이 원하는 최고의 경험을 만든다.",
+          "icon": "icon.png"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "name": "신한은행",
+      "image": ".icon",
+      "location": "서울특별시 강남구",
+      "url": "www.naver.com",
+      "talents": [
+        {
+          "id": 12,
+          "keyword": "주도적 몰입",
+          "description": "자율과 책임에 기반하여 성과를 낸다.",
+          "icon": "icon.png"
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "name": "카카오",
+      "image": ".icon",
+      "location": "서울특별시 강서구",
+      "url": "www.naver.com",
+      "talents": [
+        {
+          "id": 13,
+          "keyword": "고객중심",
+          "description": "고객이 원하는 최고의 경험을 만든다.",
+          "icon": "icon.png"
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "name": "신한은행",
+      "image": ".icon",
+      "location": "서울특별시 강남구",
+      "url": "www.naver.com",
+      "talents": [
+        {
+          "id": 14,
+          "keyword": "주도적 몰입",
+          "description": "자율과 책임에 기반하여 성과를 낸다.",
+          "icon": "icon.png"
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "name": "카카오",
+      "image": ".icon",
+      "location": "서울특별시 강서구",
+      "url": "www.naver.com",
+      "talents": [
+        {
+          "id": 1,
+          "keyword": "고객중심",
+          "description": "고객이 원하는 최고의 경험을 만든다.",
+          "icon": "icon.png"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "신한은행",
+      "image": ".icon",
+      "location": "서울특별시 강남구",
+      "url": "www.naver.com",
+      "talents": [
+        {
+          "id": 2,
+          "keyword": "주도적 몰입",
+          "description": "자율과 책임에 기반하여 성과를 낸다.",
+          "icon": "icon.png"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "카카오",
+      "image": ".icon",
+      "location": "서울특별시 강서구",
+      "url": "www.naver.com",
+      "talents": [
+        {
+          "id": 3,
+          "keyword": "고객중심",
+          "description": "고객이 원하는 최고의 경험을 만든다.",
+          "icon": "icon.png"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "신한은행",
+      "image": ".icon",
+      "location": "서울특별시 강남구",
+      "url": "www.naver.com",
+      "talents": [
+        {
+          "id": 4,
+          "keyword": "주도적 몰입",
+          "description": "자율과 책임에 기반하여 성과를 낸다.",
+          "icon": "icon.png"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "카카오",
+      "image": ".icon",
+      "location": "서울특별시 강서구",
+      "url": "www.naver.com",
+      "talents": [
+        {
+          "id": 5,
+          "keyword": "고객중심",
+          "description": "고객이 원하는 최고의 경험을 만든다.",
+          "icon": "icon.png"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "신한은행",
+      "image": ".icon",
+      "location": "서울특별시 강남구",
+      "url": "www.naver.com",
+      "talents": [
+        {
+          "id": 6,
+          "keyword": "주도적 몰입",
+          "description": "자율과 책임에 기반하여 성과를 낸다.",
+          "icon": "icon.png"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "name": "카카오",
+      "image": ".icon",
+      "location": "서울특별시 강서구",
+      "url": "www.naver.com",
+      "talents": [
+        {
+          "id": 7,
+          "keyword": "고객중심",
+          "description": "고객이 원하는 최고의 경험을 만든다.",
+          "icon": "icon.png"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "name": "신한은행",
+      "image": ".icon",
+      "location": "서울특별시 강남구",
+      "url": "www.naver.com",
+      "talents": [
+        {
+          "id": 8,
+          "keyword": "주도적 몰입",
+          "description": "자율과 책임에 기반하여 성과를 낸다.",
+          "icon": "icon.png"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "name": "카카오",
+      "image": ".icon",
+      "location": "서울특별시 강서구",
+      "url": "www.naver.com",
+      "talents": [
+        {
+          "id": 9,
+          "keyword": "고객중심",
+          "description": "고객이 원하는 최고의 경험을 만든다.",
+          "icon": "icon.png"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "name": "신한은행",
+      "image": ".icon",
+      "location": "서울특별시 강남구",
+      "url": "www.naver.com",
+      "talents": [
+        {
+          "id": 10,
+          "keyword": "주도적 몰입",
+          "description": "자율과 책임에 기반하여 성과를 낸다.",
+          "icon": "icon.png"
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "name": "카카오",
+      "image": ".icon",
+      "location": "서울특별시 강서구",
+      "url": "www.naver.com",
+      "talents": [
+        {
+          "id": 11,
+          "keyword": "고객중심",
+          "description": "고객이 원하는 최고의 경험을 만든다.",
+          "icon": "icon.png"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "name": "신한은행",
+      "image": ".icon",
+      "location": "서울특별시 강남구",
+      "url": "www.naver.com",
+      "talents": [
+        {
+          "id": 12,
+          "keyword": "주도적 몰입",
+          "description": "자율과 책임에 기반하여 성과를 낸다.",
+          "icon": "icon.png"
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "name": "카카오",
+      "image": ".icon",
+      "location": "서울특별시 강서구",
+      "url": "www.naver.com",
+      "talents": [
+        {
+          "id": 13,
+          "keyword": "고객중심",
+          "description": "고객이 원하는 최고의 경험을 만든다.",
+          "icon": "icon.png"
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "name": "신한은행",
+      "image": ".icon",
+      "location": "서울특별시 강남구",
+      "url": "www.naver.com",
+      "talents": [
+        {
+          "id": 14,
+          "keyword": "주도적 몰입",
+          "description": "자율과 책임에 기반하여 성과를 낸다.",
+          "icon": "icon.png"
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "name": "카카오",
+      "image": ".icon",
+      "location": "서울특별시 강서구",
+      "url": "www.naver.com",
+      "talents": [
+        {
+          "id": 1,
+          "keyword": "고객중심",
+          "description": "고객이 원하는 최고의 경험을 만든다.",
+          "icon": "icon.png"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "신한은행",
+      "image": ".icon",
+      "location": "서울특별시 강남구",
+      "url": "www.naver.com",
+      "talents": [
+        {
+          "id": 2,
+          "keyword": "주도적 몰입",
+          "description": "자율과 책임에 기반하여 성과를 낸다.",
+          "icon": "icon.png"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "카카오",
+      "image": ".icon",
+      "location": "서울특별시 강서구",
+      "url": "www.naver.com",
+      "talents": [
+        {
+          "id": 3,
+          "keyword": "고객중심",
+          "description": "고객이 원하는 최고의 경험을 만든다.",
+          "icon": "icon.png"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "신한은행",
+      "image": ".icon",
+      "location": "서울특별시 강남구",
+      "url": "www.naver.com",
+      "talents": [
+        {
+          "id": 4,
+          "keyword": "주도적 몰입",
+          "description": "자율과 책임에 기반하여 성과를 낸다.",
+          "icon": "icon.png"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "카카오",
+      "image": ".icon",
+      "location": "서울특별시 강서구",
+      "url": "www.naver.com",
+      "talents": [
+        {
+          "id": 5,
+          "keyword": "고객중심",
+          "description": "고객이 원하는 최고의 경험을 만든다.",
+          "icon": "icon.png"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "신한은행",
+      "image": ".icon",
+      "location": "서울특별시 강남구",
+      "url": "www.naver.com",
+      "talents": [
+        {
+          "id": 6,
+          "keyword": "주도적 몰입",
+          "description": "자율과 책임에 기반하여 성과를 낸다.",
+          "icon": "icon.png"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "name": "카카오",
+      "image": ".icon",
+      "location": "서울특별시 강서구",
+      "url": "www.naver.com",
+      "talents": [
+        {
+          "id": 7,
+          "keyword": "고객중심",
+          "description": "고객이 원하는 최고의 경험을 만든다.",
+          "icon": "icon.png"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "name": "신한은행",
+      "image": ".icon",
+      "location": "서울특별시 강남구",
+      "url": "www.naver.com",
+      "talents": [
+        {
+          "id": 8,
+          "keyword": "주도적 몰입",
+          "description": "자율과 책임에 기반하여 성과를 낸다.",
+          "icon": "icon.png"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "name": "카카오",
+      "image": ".icon",
+      "location": "서울특별시 강서구",
+      "url": "www.naver.com",
+      "talents": [
+        {
+          "id": 9,
+          "keyword": "고객중심",
+          "description": "고객이 원하는 최고의 경험을 만든다.",
+          "icon": "icon.png"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "name": "신한은행",
+      "image": ".icon",
+      "location": "서울특별시 강남구",
+      "url": "www.naver.com",
+      "talents": [
+        {
+          "id": 10,
+          "keyword": "주도적 몰입",
+          "description": "자율과 책임에 기반하여 성과를 낸다.",
+          "icon": "icon.png"
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "name": "카카오",
+      "image": ".icon",
+      "location": "서울특별시 강서구",
+      "url": "www.naver.com",
+      "talents": [
+        {
+          "id": 11,
+          "keyword": "고객중심",
+          "description": "고객이 원하는 최고의 경험을 만든다.",
+          "icon": "icon.png"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "name": "신한은행",
+      "image": ".icon",
+      "location": "서울특별시 강남구",
+      "url": "www.naver.com",
+      "talents": [
+        {
+          "id": 12,
+          "keyword": "주도적 몰입",
+          "description": "자율과 책임에 기반하여 성과를 낸다.",
+          "icon": "icon.png"
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "name": "카카오",
+      "image": ".icon",
+      "location": "서울특별시 강서구",
+      "url": "www.naver.com",
+      "talents": [
+        {
+          "id": 13,
+          "keyword": "고객중심",
+          "description": "고객이 원하는 최고의 경험을 만든다.",
+          "icon": "icon.png"
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "name": "신한은행",
+      "image": ".icon",
+      "location": "서울특별시 강남구",
+      "url": "www.naver.com",
+      "talents": [
+        {
+          "id": 14,
+          "keyword": "주도적 몰입",
+          "description": "자율과 책임에 기반하여 성과를 낸다.",
+          "icon": "icon.png"
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "name": "카카오",
+      "image": ".icon",
+      "location": "서울특별시 강서구",
+      "url": "www.naver.com",
+      "talents": [
+        {
+          "id": 1,
+          "keyword": "고객중심",
+          "description": "고객이 원하는 최고의 경험을 만든다.",
+          "icon": "icon.png"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "신한은행",
+      "image": ".icon",
+      "location": "서울특별시 강남구",
+      "url": "www.naver.com",
+      "talents": [
+        {
+          "id": 2,
+          "keyword": "주도적 몰입",
+          "description": "자율과 책임에 기반하여 성과를 낸다.",
+          "icon": "icon.png"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "카카오",
+      "image": ".icon",
+      "location": "서울특별시 강서구",
+      "url": "www.naver.com",
+      "talents": [
+        {
+          "id": 3,
+          "keyword": "고객중심",
+          "description": "고객이 원하는 최고의 경험을 만든다.",
+          "icon": "icon.png"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "신한은행",
+      "image": ".icon",
+      "location": "서울특별시 강남구",
+      "url": "www.naver.com",
+      "talents": [
+        {
+          "id": 4,
+          "keyword": "주도적 몰입",
+          "description": "자율과 책임에 기반하여 성과를 낸다.",
+          "icon": "icon.png"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "카카오",
+      "image": ".icon",
+      "location": "서울특별시 강서구",
+      "url": "www.naver.com",
+      "talents": [
+        {
+          "id": 5,
+          "keyword": "고객중심",
+          "description": "고객이 원하는 최고의 경험을 만든다.",
+          "icon": "icon.png"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "신한은행",
+      "image": ".icon",
+      "location": "서울특별시 강남구",
+      "url": "www.naver.com",
+      "talents": [
+        {
+          "id": 6,
+          "keyword": "주도적 몰입",
+          "description": "자율과 책임에 기반하여 성과를 낸다.",
+          "icon": "icon.png"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "name": "카카오",
+      "image": ".icon",
+      "location": "서울특별시 강서구",
+      "url": "www.naver.com",
+      "talents": [
+        {
+          "id": 7,
+          "keyword": "고객중심",
+          "description": "고객이 원하는 최고의 경험을 만든다.",
+          "icon": "icon.png"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "name": "신한은행",
+      "image": ".icon",
+      "location": "서울특별시 강남구",
+      "url": "www.naver.com",
+      "talents": [
+        {
+          "id": 8,
+          "keyword": "주도적 몰입",
+          "description": "자율과 책임에 기반하여 성과를 낸다.",
+          "icon": "icon.png"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "name": "카카오",
+      "image": ".icon",
+      "location": "서울특별시 강서구",
+      "url": "www.naver.com",
+      "talents": [
+        {
+          "id": 9,
+          "keyword": "고객중심",
+          "description": "고객이 원하는 최고의 경험을 만든다.",
+          "icon": "icon.png"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "name": "신한은행",
+      "image": ".icon",
+      "location": "서울특별시 강남구",
+      "url": "www.naver.com",
+      "talents": [
+        {
+          "id": 10,
+          "keyword": "주도적 몰입",
+          "description": "자율과 책임에 기반하여 성과를 낸다.",
+          "icon": "icon.png"
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "name": "카카오",
+      "image": ".icon",
+      "location": "서울특별시 강서구",
+      "url": "www.naver.com",
+      "talents": [
+        {
+          "id": 11,
+          "keyword": "고객중심",
+          "description": "고객이 원하는 최고의 경험을 만든다.",
+          "icon": "icon.png"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "name": "신한은행",
+      "image": ".icon",
+      "location": "서울특별시 강남구",
+      "url": "www.naver.com",
+      "talents": [
+        {
+          "id": 12,
+          "keyword": "주도적 몰입",
+          "description": "자율과 책임에 기반하여 성과를 낸다.",
+          "icon": "icon.png"
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "name": "카카오",
+      "image": ".icon",
+      "location": "서울특별시 강서구",
+      "url": "www.naver.com",
+      "talents": [
+        {
+          "id": 13,
+          "keyword": "고객중심",
+          "description": "고객이 원하는 최고의 경험을 만든다.",
+          "icon": "icon.png"
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "name": "신한은행",
+      "image": ".icon",
+      "location": "서울특별시 강남구",
+      "url": "www.naver.com",
+      "talents": [
+        {
+          "id": 14,
+          "keyword": "주도적 몰입",
+          "description": "자율과 책임에 기반하여 성과를 낸다.",
+          "icon": "icon.png"
+        }
+      ]
+    }
+  ],
+  "pageInfo": {
+    "page": 1,
+    "size": 12,
+    "totalElements": 203,
+    "totalPages": 2
+  },
+  "add": [
+    {
+      "name": "박현석",
+      "image": "이미지.png",
+      "companyInfo": {
+        "location": "서울특별시 중랑구",
+        "url": "www.hyun-seok.com/",
+        "recruitUrl": "www.hyun-seok.com/",
+        "techBlog": "www.hyun-seok.com/"
+      },
+      "talents": [
+        {
+          "keyword": "상냥",
+          "description": "상냥합니다.",
+          "baseUrl": "https://www.hyun-seok.com/"
+        }
+      ],
+      "id": 1
+    },
+    {
+      "name": "박현석",
+      "image": "이미지.png",
+      "companyInfo": {
+        "location": "서울특별시 중랑구",
+        "url": "www.hyun-seok.com/",
+        "recruitUrl": "www.hyun-seok.com/",
+        "techBlog": "www.hyun-seok.com/"
+      },
+      "talents": [
+        {
+          "keyword": "상냥",
+          "description": "상냥합니다.",
+          "baseUrl": "https://www.hyun-seok.com/"
+        },
+        {
+          "keyword": "ㅇㅁㄴ",
+          "description": "ㅇㄴㅁ",
+          "baseUrl": "ㅇㄴㅁ"
+        }
+      ],
+      "id": 2
+    },
+    {
+      "name": "ㅇㄴㅁ",
+      "image": "이미지.png",
+      "companyInfo": {
+        "location": "ㅇㄴㅁ",
+        "url": "ㅇㄴㅁ",
+        "recruitUrl": "",
+        "techBlog": ""
+      },
+      "talents": [
+        {
+          "keyword": "ㅇㄴㅁ",
+          "description": "ㅇㄴㅁ",
+          "baseUrl": ""
+        }
+      ],
+      "id": 3
+    },
+    {
+      "name": "ㅇㄴㅁ",
+      "image": "이미지.png",
+      "companyInfo": {
+        "location": "ㅇㄴㅁ",
+        "url": "ㅇㄴㅁ",
+        "recruitUrl": "",
+        "techBlog": ""
+      },
+      "talents": [
+        {
+          "keyword": "ㅎㅇ",
+          "description": "ㅎㅇ",
+          "baseUrl": ""
+        }
+      ],
+      "id": 4
+    },
+    {
+      "name": "dsaㅇㄴㅁ",
+      "image": "이미지.png",
+      "companyInfo": {
+        "location": "ㅇㄴㅁ",
+        "url": "ㅇㄴㅁ",
+        "recruitUrl": "ㅇㄴㅁ",
+        "techBlog": "ㅇㄴㅁ"
+      },
+      "talents": [
+        {
+          "id": 1,
+          "keyword": "ㅇㄴㅁ",
+          "description": "ㅇㄴㅁㅇ",
+          "baseUrl": "ㅇㄴㅁ"
+        }
+      ],
+      "location": "ㅁ",
+      "url": "ㅁ",
+      "recruitUrl": "ㅁ",
+      "techBlog": "ㅁ",
+      "id": 5
+    },
+    {
+      "name": "ㅇㄴㅁ",
+      "image": "이미지.png",
+      "companyInfo": {
+        "location": "ㅇㄴㅁ",
+        "url": "ㅇㄴㅁ",
+        "recruitUrl": "ㅇㅁㅇㄴㅁㅇㄴㅁ",
+        "techBlog": ""
+      },
+      "talents": [
+        {
+          "id": 1,
+          "keyword": "ㅇㄴㅁ",
+          "description": "ㅇㄴㅁ",
+          "baseUrl": "ㅇㄴㅁ"
+        },
+        {
+          "id": 2,
+          "keyword": "ㅇㄴㅁ",
+          "description": "ㅇㄴㅁ",
+          "baseUrl": "ㅇㄴㅁ"
+        }
+      ],
+      "id": 6
+    }
+  ]
+}

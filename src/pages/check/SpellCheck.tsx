@@ -3,16 +3,16 @@ import { GrPowerReset } from "react-icons/gr";
 import { LuCopy } from "react-icons/lu";
 import { AiOutlineInfoCircle } from "react-icons/ai";
 import { FaCircle } from "react-icons/fa";
-import ToggleButton from "../../components/buttons/ToggleButton.tsx";
-import DisabledButton from "../../components/buttons/DisabledButton.tsx";
-import ActivatedButton from "../../components/buttons/ActivatedButton.tsx";
+import ToggleButton from "../../components/check/buttons/ToggleButton.tsx";
+import DisabledButton from "../../components/check/buttons/DisabledButton.tsx";
+import ActivatedButton from "../../components/check/buttons/ActivatedButton.tsx";
 import CorrectionItem from "../../components/check/CorrectionItem.tsx";
 
 export default function SpellCheck() {
     const [showInfo, setShowInfo] = useState<boolean>(false);
     const [inputText, setInputText] = useState<string>("");
     const [isSpellCheckClicked, setIsSpellCheckClicked] = useState<boolean>(false);
-    const [includeSpaces, setIncludeSpaces] = useState<boolean>(true);
+    const [includeSpaces, setIncludeSpaces] = useState<boolean>(false);
     const [includeSpecialCharacters, setIncludeSpecialCharacters] = useState<boolean>(false);
     const [specialCharactersCount, setSpecialCharactersCount] = useState<number>(0);
     const [correctionItems, setCorrectionItems] = useState<

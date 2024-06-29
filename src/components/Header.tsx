@@ -17,10 +17,12 @@ export default function Header() {
     const checkHeaderLinks = [
         { path: "/check", text: "맞춤법 검사" },
         { path: "/1", text: "멘트 추천" },
-        { path: "/2", text: "기업별 인재상" },
+        { path: "/company/list", text: "기업별 인재상" },
         { path: "/3", text: "도움말" },
         { path: "/4", text: "로그인" }
     ];
+
+    const isWhiteBackground = pathname.startsWith("/check") || pathname.startsWith("/company");
 
     useEffect(() => {
         setActiveSection &&
@@ -36,7 +38,7 @@ export default function Header() {
     const getHeaderClass = (sectionKey: string, isMainHeader: boolean) => {
         const isActive = isMainHeader
             ? activeSection.startsWith(sectionKey) || activeSection === sectionKey
-            : pathname === `/${sectionKey}`;
+            : pathname.startsWith(`/${sectionKey}`);
         if (isActive) {
             if (sectionKey === "advantage" || activeSection.startsWith("advantage")) {
                 return "cursor-pointer font-GmarketSansBold text-white border-b-2 border-white";
@@ -58,9 +60,9 @@ export default function Header() {
     };
 
     const renderHeaderItems = () => {
-        if (["/check", "/1", "/2", "/3", "/4"].some(route => pathname.startsWith(route))) {
+        if (["/check", "/1", "/company", "/3", "/4"].some(route => pathname.startsWith(route))) {
             return checkHeaderLinks.map(({ path, text }) => (
-                <Link key={path} to={path} className={getHeaderClass(path.replace("/", ""), false)}>
+                <Link key={path} to={path} className={getHeaderClass(path.split("/")[1], false)}>
                     {text}
                 </Link>
             ));
@@ -78,7 +80,9 @@ export default function Header() {
     };
 
     return (
-        <header className="bg-transparent fixed top-0 z-50 w-full">
+        <header
+            className={`bg-transparent fixed top-0 z-50 w-full ${isWhiteBackground ? "bg-white" : ""}`}
+        >
             <nav>
                 <ul className="flex text-xl py-7 items-center justify-center space-x-24">
                     {renderHeaderItems()}

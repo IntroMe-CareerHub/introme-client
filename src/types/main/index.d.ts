@@ -1,3 +1,5 @@
+import React from "react";
+
 export interface MainProps {
     title: string;
     sectionId: string;
@@ -7,6 +9,17 @@ export interface MainProps {
     children?: React.ReactNode;
 }
 
-export type DeveloperProfileProps = {
+export interface DeveloperProfileProps {
     nickname: string;
-};
+}
+
+export interface DeveloperTypeProps {
+    title: string;
+    profiles: DeveloperProfileProps[];
+    children: React.ReactNode;
+}
+
+export interface FloatingButtonProps {
+    onScrollToStart: () => void;
+    activeSection: string;
+}

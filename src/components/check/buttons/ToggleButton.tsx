@@ -1,9 +1,5 @@
-import { MouseEventHandler } from "react";
+import { ToggleButtonProps } from "../../../types/check";
 
-interface ToggleButtonProps {
-    includeFunc?: boolean;
-    handleToggle?: MouseEventHandler<HTMLDivElement> | undefined;
-}
 export default function ToggleButton({ includeFunc, handleToggle }: ToggleButtonProps) {
     return (
         <div>

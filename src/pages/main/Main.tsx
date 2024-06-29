@@ -1,10 +1,10 @@
-import Advantage from "../components/main/Advantage";
-import Developer from "../components/main/Developer";
-import FloatingButton from "../components/main/FloatingButton";
-import Functions from "../components/main/Functions";
-import Info from "../components/main/Info";
-import Start from "../components/main/Start";
-import { useScroll } from "../contexts/ScrollContext";
+import Advantage from "../../components/main/Advantage.tsx";
+import Developer from "../../components/main/Developer.tsx";
+import FloatingButton from "../../components/main/buttons/FloatingButton.tsx";
+import Functions from "../../components/main/Functions.tsx";
+import Info from "../../components/main/Info.tsx";
+import Start from "../../components/main/Start.tsx";
+import { useScroll } from "../../contexts/ScrollContext.tsx";
 
 export default function Main() {
     const { sectionRefs, scrollToRef, activeSection, containerRef } = useScroll();

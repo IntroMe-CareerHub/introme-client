@@ -1,8 +1,5 @@
-type ModifyBtnProps = {
-    text: string;
-    color: string;
-    onClick: () => void;
-};
+import { ModifyBtnProps } from "../../../types/check";
+
 export default function ModifyButton({ text, color, onClick }: ModifyBtnProps) {
     return (
         <button

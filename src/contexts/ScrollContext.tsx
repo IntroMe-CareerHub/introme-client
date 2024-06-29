@@ -1,16 +1,5 @@
 import React, { createContext, useContext, useEffect, useRef, useState, ReactNode } from "react";
-
-interface SectionRefs {
-    [key: string]: React.RefObject<HTMLDivElement>;
-}
-
-interface ScrollContextType {
-    containerRef: React.RefObject<HTMLDivElement>;
-    sectionRefs: SectionRefs;
-    scrollToRef: (sectionKey: keyof SectionRefs) => void;
-    activeSection: string;
-    setActiveSection: (activeSection: string) => void;
-}
+import { ScrollContextType, SectionRefs } from "../types/scroll";
 
 const ScrollContext = createContext<ScrollContextType | undefined>(undefined);
 

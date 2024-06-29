@@ -1,9 +1,5 @@
 import { IoIosArrowDown } from "react-icons/io";
-
-interface FloatingButtonProps {
-    onScrollToStart: () => void;
-    activeSection: string;
-}
+import { FloatingButtonProps } from "../../../types/main";
 
 const sectionStyles: { [key: string]: string | null } = {
     advantage: "bg-white text-main-1",
