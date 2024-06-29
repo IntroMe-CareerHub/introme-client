@@ -8,21 +8,26 @@ import MainFrame from "./layouts/MainFrame.tsx";
 import SignIn from "./pages/login/SignIn.tsx";
 import SignInSuccess from "./pages/login/SignInSuccess.tsx";
 
+import { UserProvider } from "./contexts/UserContext.tsx";
+
 export default function App() {
     return (
-        <>
-            <QueryClientProvider client={queryClient}>
-                <Router />
+        <QueryClientProvider client={queryClient}>
+            <UserProvider>
+                <Routes>
+                    <Route path="/sign-in" element={<SignIn />} />
+                    <Route path="/login-success" element={<SignInSuccess />} />
+                    <Route
+                        path="/"
+                        element={
+                            <MainFrame>
+                                <Router />
+                            </MainFrame>
+                        }
+                    />
+                </Routes>
                 <ReactQueryDevtools />
-            </QueryClientProvider><Routes>
-            <Route path="/sign-in" element={<SignIn />} />
-            <Route path="/login-success" element={<SignInSuccess />} />
-            <Route
-                path="/"
-                element={<MainFrame user={user}>
-                    <Router />
-                </MainFrame>} />
-        </Routes>
-        </>
+            </UserProvider>
+        </QueryClientProvider>
     );
 }
