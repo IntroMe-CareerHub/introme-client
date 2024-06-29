@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, useCallback } from "react";
-import { useInfiniteQuery, useQuery } from "@tanstack/react-query";
+import { useInfiniteQuery } from "@tanstack/react-query";
 import CompanyCard from "../../components/company/CompanyCard";
 import CompanyHeader from "../../components/company/CompanyHeader";
 import Loader from "../../components/Loader";
@@ -13,11 +13,6 @@ export default function CompanyList() {
     // Intersection Observer 인스턴스에 대한 참조
     const intersectionObserver = useRef<IntersectionObserver | null>(null);
 
-    const { data: pageInfo } = useQuery({
-        queryKey: ["pageInfo"],
-        queryFn: CompanyAPI.fetchPageInfo
-    });
-
     const {
         data: companies,
         error,
@@ -28,10 +23,17 @@ export default function CompanyList() {
     } = useInfiniteQuery({
         queryKey: ["companies"],
         queryFn: ({ pageParam = 1 }) => CompanyAPI.fetchCompanies(pageParam),
-        initialPageParam: 1,
-        getNextPageParam: lastPage =>
-            lastPage.page < lastPage.totalPages ? lastPage.page + 1 : undefined
+        initialPageParam: 0,
+        getNextPageParam: lastPage => {
+            const nextPage = lastPage.pageInfo.page;
+            return nextPage <= lastPage.pageInfo.totalPages ? nextPage : undefined;
+        }
     });
+
+    // test code
+    console.log(companies);
+
+    const totalElements = companies?.pages[0]?.pageInfo.totalElements ?? 0;
 
     /**
      * 사용 가능한 다음 페이지가 있고 아직 다음 페이지를 가져오고 있지 않은 경우 다음 페이지 가져오기를 트리거 하는 함수
@@ -72,7 +74,7 @@ export default function CompanyList() {
 
     return (
         <div className="pt-[86px] px-20">
-            <CompanyHeader totalElements={pageInfo?.totalElements} />
+            <CompanyHeader totalElements={totalElements} />
             <div className="pt-11">
                 <div className="grid grid-cols-3 gap-x-8 gap-y-5">
                     {companies?.pages.map((page, index) => (

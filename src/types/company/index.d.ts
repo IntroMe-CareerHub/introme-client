@@ -24,7 +24,18 @@ export interface CompanyCardProps {
     talents: Talent[];
 }
 
-// 기업 및 인재상 제출
+export interface PageInfo {
+    page: number;
+    size: number;
+    totalElements: number;
+    totalPages: number;
+}
+
+export interface CompanyListResponse {
+    data: CompanyCardProps[];
+    pageInfo: PageInfo;
+}
+
 export interface CompanyProps {
     id?: number;
     name: string;

@@ -1,5 +1,5 @@
 import axios, { AxiosInstance } from "axios";
-import { CompanyCardProps, Talent, CompanyProps } from "../types/company";
+import { Talent, CompanyProps, CompanyListResponse } from "../types/company";
 
 export class CompanyAPI {
     static instance: AxiosInstance = axios.create({
@@ -31,42 +31,33 @@ export class CompanyAPI {
         });
     }
 
-    // public static async fetchCompanies(
-    //     pageParam = 1
-    // ): Promise<{ data: CompanyCardProps[]; totalPages: number; page: number }> {
-    //     const response = await this.instance.get(`/company/list`, {
-    //         params: { page: pageParam, size: 12 }
-    //     });
-    //
+    public static async fetchCompanies(pageParam: number): Promise<CompanyListResponse> {
+        try {
+            const response = await this.instance.get(`/company/list`, {
+                params: { page: pageParam, size: 12 }
+            });
+
+            if (response.status !== 200) throw new Error("Error");
+
+            // test code
+            console.log(response.data);
+
+            const { data, pageInfo } = response.data;
+            return { data, pageInfo };
+        } catch (error) {
+            console.error("Error:", error);
+            throw error;
+        }
+    }
+
+    // test code
+    // public static async fetchCompanies(pageParam: number): Promise<CompanyListResponse> {
+    //     const response = await this.instance.get(`/company/list`);
     //     if (response.status !== 200) throw new Error("Error");
-    //
-    //     const data = response.data;
-    //
-    //     const totalCountHeader = response.headers["x-total-count"];
-    //     const totalCount = totalCountHeader ? parseInt(totalCountHeader, 10) : 0;
-    //     const totalPages = Math.ceil(totalCount / 12);
-    //
-    //     return { data, totalPages, page: pageParam };
+
+    //     console.log(pageParam);
+
+    //     const { data, pageInfo } = response.data;
+    //     return { data, pageInfo };
     // }
-
-    public static async fetchCompanies(pageParam: number): Promise<{
-        data: CompanyCardProps[];
-        totalPages: number;
-        page: number;
-    }> {
-        const response = await this.instance.get(`/company/list`);
-        if (response.status !== 200) throw new Error("Error");
-
-        const { data, pageInfo } = response.data;
-        const totalPages = pageInfo.totalPages;
-        const page = pageInfo.page;
-
-        return { data, totalPages, page };
-    }
-
-    public static async fetchPageInfo(): Promise<{ totalElements: number }> {
-        const response = await this.instance.get(`/pageInfo`);
-        if (response.status !== 200) throw new Error("Error");
-        return response.data;
-    }
 }
