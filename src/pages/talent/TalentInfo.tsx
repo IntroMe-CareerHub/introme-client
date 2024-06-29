@@ -18,6 +18,7 @@ export default function TalentInfo() {
                 const data = await CompanyAPI.getCompanyTalentInfo(companyId);
                 console.log("data:", data);
                 setCompanyData(data);
+                window.scrollTo(0, 0);
             } catch (error) {
                 if (axios.isAxiosError(error)) {
                     console.error("Axios Error:", error);
