@@ -39,7 +39,6 @@ export class CompanyAPI {
 
             if (response.status !== 200) throw new Error("Error");
 
-            // test code
             console.log(response.data);
 
             const { data, pageInfo } = response.data;
@@ -49,15 +48,4 @@ export class CompanyAPI {
             throw error;
         }
     }
-
-    // test code
-    // public static async fetchCompanies(pageParam: number): Promise<CompanyListResponse> {
-    //     const response = await this.instance.get(`/company/list`);
-    //     if (response.status !== 200) throw new Error("Error");
-
-    //     console.log(pageParam);
-
-    //     const { data, pageInfo } = response.data;
-    //     return { data, pageInfo };
-    // }
 }

@@ -48,6 +48,11 @@ export interface CompanyProps {
 
 export interface CompanyHeaderProps {
     totalElements: number | undefined;
+    onSearch: (searchQuery: string) => void;
+}
+
+export interface CompanyHeaderState {
+    searchQuery: string;
 }
 
 export interface CompanyInputFieldProps {

@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useCallback } from "react";
+import { useRef, useEffect, useCallback, useState } from "react";
 import { useInfiniteQuery } from "@tanstack/react-query";
 import CompanyCard from "../../components/company/CompanyCard";
 import CompanyHeader from "../../components/company/CompanyHeader";
@@ -12,6 +12,7 @@ export default function CompanyList() {
     const observerElem = useRef<HTMLDivElement | null>(null);
     // Intersection Observer 인스턴스에 대한 참조
     const intersectionObserver = useRef<IntersectionObserver | null>(null);
+    const [searchQuery, setSearchQuery] = useState<string>("");
 
     const {
         data: companies,
@@ -30,9 +31,7 @@ export default function CompanyList() {
         }
     });
 
-    // test code
     console.log(companies);
-
     const totalElements = companies?.pages[0]?.pageInfo.totalElements ?? 0;
 
     /**
@@ -69,28 +68,31 @@ export default function CompanyList() {
         };
     }, [loadMore, hasNextPage]);
 
+    const filteredCompanies =
+        companies?.pages.flatMap(page =>
+            page.data.filter(company =>
+                company.name.toLowerCase().includes(searchQuery.toLowerCase())
+            )
+        ) ?? [];
+
     if (error) return <div>Error: {error.message}</div>;
     if (isLoading) return <Loading />;
 
     return (
         <div className="pt-[86px] px-20">
-            <CompanyHeader totalElements={totalElements} />
+            <CompanyHeader totalElements={totalElements} onSearch={setSearchQuery} />
             <div className="pt-11">
                 <div className="grid grid-cols-3 gap-x-8 gap-y-5">
-                    {companies?.pages.map((page, index) => (
-                        <React.Fragment key={index}>
-                            {page.data.map((company: CompanyCardProps) => (
-                                <CompanyCard
-                                    key={company.id}
-                                    id={company.id}
-                                    image={company.image}
-                                    name={company.name}
-                                    talents={company.talents}
-                                    location={company.location}
-                                    url={company.url}
-                                />
-                            ))}
-                        </React.Fragment>
+                    {filteredCompanies.map((company: CompanyCardProps) => (
+                        <CompanyCard
+                            key={company.id}
+                            id={company.id}
+                            image={company.image}
+                            name={company.name}
+                            talents={company.talents}
+                            location={company.location}
+                            url={company.url}
+                        />
                     ))}
                 </div>
                 {(isFetchingNextPage || hasNextPage) && <Loader />}
