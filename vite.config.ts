@@ -2,14 +2,15 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 
 // https://vitejs.dev/config/
+const apiUrl = "http://localhost:8081";
 export default defineConfig({
     plugins: [react()],
     server: {
+        port: 3000,
         proxy: {
-            "/api": {
-                target: "http://localhost:8080",
-                changeOrigin: true
-            }
+            "/oauth2": apiUrl,
+            "/api": apiUrl,
+            "/logout": apiUrl
         }
     }
 });

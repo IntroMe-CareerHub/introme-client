@@ -1,7 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import Main from "../pages/main/Main.tsx";
 import SpellCheck from "../pages/check/SpellCheck";
-import Layout from "./Layout";
+import Layout from "../layouts/Layout.tsx";
 import CompanyList from "../pages/company/CompanyList";
 import CompanyAdd from "../pages/company/CompanyAdd";
 import TalentInfo from "../pages/talent/TalentInfo.tsx";
