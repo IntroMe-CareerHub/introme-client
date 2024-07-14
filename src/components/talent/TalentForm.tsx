@@ -55,8 +55,8 @@ export default function TalentForm() {
     };
 
     return (
-        <form className="space-y-8 pt-40" onSubmit={handleSubmit}>
-            <div className="relative">
+        <form className="flex flex-col space-y-8 w-[448px]" onSubmit={handleSubmit}>
+            <div className="relative w-full">
                 <TalentAddInput
                     id="name"
                     label="기업명"
@@ -67,6 +67,7 @@ export default function TalentForm() {
                     onChange={() => {}}
                     readOnly={true}
                 />
+                <span className="absolute top-0 right-0 text-[#EA3323] text-xs">*필수</span>
             </div>
             <TalentAddInput
                 id="keyword"
@@ -95,12 +96,14 @@ export default function TalentForm() {
                 value={talent.baseUrl}
                 onChange={handleTalentChange}
             />
-            <button
-                type="submit"
-                className="text-white bg-[#0085FF] px-6 py-2 rounded-lg ml-auto flex"
-            >
-                제출하기
-            </button>
+            <div className="w-full flex justify-end">
+                <button
+                    type="submit"
+                    className="text-white bg-[#0085FF] px-6 py-2 rounded-lg flex w-28"
+                >
+                    제출하기
+                </button>
+            </div>
         </form>
     );
 }

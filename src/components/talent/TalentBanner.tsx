@@ -1,17 +1,10 @@
 import NavigationLinksButton from "./buttons/NavigationLinksButton.tsx";
 import TalentIconSlider from "./TalentIconSlider.tsx";
 import { TalentBannerProps } from "../../types/company";
-import { useNavigate } from "react-router-dom";
 
-export default function TalentBanner({ companyData }: TalentBannerProps) {
-    const { id, name, image, identityColor, companyInfo, updatedAt, talents } = companyData;
+export default function TalentBanner({ companyData, onAddTalent }: TalentBannerProps) {
+    const { name, image, identityColor, companyInfo, updatedAt, talents } = companyData;
     const { location, url, recruitUrl, techBlog } = companyInfo;
-
-    const navigate = useNavigate();
-    const handleAddTalent = () => {
-        console.log("companyId:", id);
-        if (id) navigate(`/company/talent/${id}/form`);
-    };
 
     return (
         <div style={{ backgroundColor: identityColor || "#EEEEEE" }} className="pt-28 px-9 pb-8">
@@ -29,7 +22,7 @@ export default function TalentBanner({ companyData }: TalentBannerProps) {
                             </div>
                             <button
                                 className={"py-2 px-4 rounded-xl bg-white"}
-                                onClick={handleAddTalent}
+                                onClick={onAddTalent}
                             >
                                 인재상 추가
                             </button>

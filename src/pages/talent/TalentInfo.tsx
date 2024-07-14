@@ -1,16 +1,19 @@
 import TalentBanner from "../../components/talent/TalentBanner.tsx";
 import TalentContents from "../../components/talent/TalentContents.tsx";
 import TalentFooter from "../../components/talent/TalentFooter.tsx";
+import TalentForm from "../../components/talent/TalentForm.tsx";
 import { useEffect, useState } from "react";
 import { CompanyAPI } from "../../apis/Company.ts";
 import { CompanyProps } from "../../types/company";
 import { useParams } from "react-router-dom";
 import Loading from "../../components/Loading.tsx";
+import { IoClose } from "react-icons/io5";
 import axios from "axios";
 
 export default function TalentInfo() {
     const [companyData, setCompanyData] = useState<CompanyProps | null>(null);
     const { companyId } = useParams();
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
     useEffect(() => {
         (async () => {
@@ -34,9 +37,22 @@ export default function TalentInfo() {
 
     return (
         <div>
-            <TalentBanner companyData={companyData} />
+            <TalentBanner companyData={companyData} onAddTalent={() => setIsModalOpen(true)} />
             <TalentContents talentData={companyData.talents} />
             <TalentFooter />
+            {isModalOpen && (
+                <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+                    <div className="bg-white pt-14 pb-10 px-14 rounded-lg relative">
+                        <button
+                            className="absolute top-4 right-4"
+                            onClick={() => setIsModalOpen(false)}
+                        >
+                            <IoClose size="28" />
+                        </button>
+                        <TalentForm />
+                    </div>
+                </div>
+            )}
         </div>
     );
 }

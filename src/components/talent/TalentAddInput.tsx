@@ -12,7 +12,7 @@ export default function TalentAddInput({
 }: TalentInputFieldProps) {
     const showUrlView = id === "baseUrl";
     return (
-        <div className="space-y-4">
+        <div className="space-y-4 w-full">
             <div className="flex justify-between items-center">
                 <label htmlFor={id} className="block font-GmarketSansBold text-xl">
                     {label}

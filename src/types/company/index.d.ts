@@ -76,6 +76,7 @@ export interface CompanyTalentInputProps {
 
 export interface TalentBannerProps {
     companyData: CompanyProps;
+    onAddTalent: () => void;
 }
 
 export interface TalentIconSliderProps {
