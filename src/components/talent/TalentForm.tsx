@@ -1,14 +1,13 @@
 import TalentAddInput from "./TalentAddInput.tsx";
 import React, { useEffect, useState } from "react";
-import { Talent } from "../../types/company";
+import { Talent, TalentFormProps } from "../../types/company";
 import { CompanyAPI } from "../../apis/Company.ts";
 import axios from "axios";
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
-export default function TalentForm() {
+export default function TalentForm({ onClose }: TalentFormProps) {
     const { companyId } = useParams<{ companyId: string }>();
     const [companyName, setCompanyName] = useState<string>("");
-    const navigate = useNavigate();
     const [talent, setTalent] = useState<Talent>({
         keyword: "",
         description: "",
@@ -40,7 +39,7 @@ export default function TalentForm() {
         }
         try {
             await CompanyAPI.appendCompanyTalent(Number(companyId), talent);
-            navigate(`/company/talent/${companyId}`);
+            onClose();
         } catch (error) {
             if (axios.isAxiosError(error)) {
                 console.error("Axios Error:", error);

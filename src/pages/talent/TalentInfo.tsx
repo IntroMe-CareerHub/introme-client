@@ -49,7 +49,7 @@ export default function TalentInfo() {
                         >
                             <IoClose size="28" />
                         </button>
-                        <TalentForm />
+                        <TalentForm onClose={() => setIsModalOpen(false)} />
                     </div>
                 </div>
             )}

@@ -79,6 +79,10 @@ export interface TalentBannerProps {
     onAddTalent: () => void;
 }
 
+export interface TalentFormProps {
+    onClose: () => void;
+}
+
 export interface TalentIconSliderProps {
     talents: { icon?: string }[];
 }
