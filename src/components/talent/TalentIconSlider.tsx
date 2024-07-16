@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
-import { TalentIconSliderProps } from "../../types/talent";
+import { TalentIconSliderProps } from "../../types/company";
 
 export default function TalentIconSlider({ talents }: TalentIconSliderProps) {
     const slides = talents.map(talent => ({ icon: talent.icon }));
-    const num = Math.trunc(40 / slides.length);
+    const num = slides.length > 0 ? Math.trunc(40 / slides.length) : 0;
     const duplicatedSlides = Array.from({ length: num }, () => slides).flat();
     return (
         <div

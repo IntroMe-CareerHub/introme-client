@@ -1,11 +1,4 @@
-import { Talent } from "../../types/company";
-
-interface CompanyTalentInputProps {
-    index: number;
-    talent: Talent;
-    handleTalentChange: (index: number, field: string, value: string) => void;
-    handleRemoveTalent: (id: number | undefined) => void;
-}
+import { CompanyTalentInputProps } from "../../types/company";
 
 export default function CompanyTalentInput({
     index,

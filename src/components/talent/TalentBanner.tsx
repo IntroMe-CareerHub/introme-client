@@ -1,13 +1,13 @@
 import NavigationLinksButton from "./buttons/NavigationLinksButton.tsx";
 import TalentIconSlider from "./TalentIconSlider.tsx";
-import { TalentBannerProps } from "../../types/talent";
+import { TalentBannerProps } from "../../types/company";
 
-export default function TalentBanner({ companyData }: TalentBannerProps) {
+export default function TalentBanner({ companyData, onAddTalent }: TalentBannerProps) {
     const { name, image, identityColor, companyInfo, updatedAt, talents } = companyData;
     const { location, url, recruitUrl, techBlog } = companyInfo;
 
     return (
-        <div className={`bg-[${identityColor}] pt-28 px-9 pb-8`}>
+        <div style={{ backgroundColor: identityColor || "#EEEEEE" }} className="pt-28 px-9 pb-8">
             <div className="flex flex-col">
                 <div className="flex justify-between">
                     <div className="flex pt-10 pr-4 w-36 justify-end">
@@ -20,8 +20,12 @@ export default function TalentBanner({ companyData }: TalentBannerProps) {
                             <div className="content-end text-xl font-GmarketSansBold">
                                 기업 인재상
                             </div>
-                            {/* TODO: 인재상 추가 페이지 연결 */}
-                            <NavigationLinksButton text="인재상 추가" url="#" />
+                            <button
+                                className={"py-2 px-4 rounded-xl bg-white"}
+                                onClick={onAddTalent}
+                            >
+                                인재상 추가
+                            </button>
                         </div>
                         <div className="h-20 text-6xl content-center font-GmarketSansBold">
                             {name}
@@ -36,7 +40,7 @@ export default function TalentBanner({ companyData }: TalentBannerProps) {
                     <NavigationLinksButton text="기술 블로그" url={techBlog} />
                 </div>
                 <div className="flex justify-end">
-                    마지막 업데이트: {new Date(updatedAt).toLocaleString()}
+                    {updatedAt && <>마지막 업데이트: {new Date(updatedAt).toLocaleString()}</>}
                 </div>
             </div>
         </div>

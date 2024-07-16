@@ -1,6 +1,5 @@
 import { motion, Variants } from "framer-motion";
-import { useEffect } from "react";
-import { TalentContentsProps } from "../../types/talent";
+import { TalentContentsProps } from "../../types/company";
 
 const cardVariants: Variants = {
     offscreen: {
@@ -17,12 +16,6 @@ const cardVariants: Variants = {
 };
 
 export default function TalentContents({ talentData }: TalentContentsProps) {
-    useEffect(() => {
-        window.onbeforeunload = function pushRefresh() {
-            window.scrollTo(0, 0);
-        };
-    }, []);
-
     return (
         <div className="px-20 pt-36 flex justify-between">
             <div className="w-1/2">

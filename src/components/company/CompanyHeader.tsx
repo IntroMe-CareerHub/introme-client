@@ -1,13 +1,27 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { FaAngleDown, FaPlus } from "react-icons/fa6";
 import { IoSearch } from "react-icons/io5";
 import { Link } from "react-router-dom";
+import { CompanyHeaderState, CompanyHeaderProps } from "../../types/company";
+import React, { useState } from "react";
 
-interface CompanyHeaderProps {
-    totalElements: number | undefined;
-}
+export default function CompanyHeader({ totalElements, onSearch }: CompanyHeaderProps) {
+    const [state, setState] = useState<CompanyHeaderState>({ searchQuery: "" });
 
-export default function CompanyHeader({ totalElements }: CompanyHeaderProps) {
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setState({ ...state, searchQuery: e.target.value });
+    };
+
+    const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+        if (e.key === "Enter") {
+            handleSearch();
+        }
+    };
+
+    const handleSearch = () => {
+        console.log("검색어:", state.searchQuery);
+        onSearch(state.searchQuery);
+    };
+
     return (
         <div className="flex justify-between pt-2">
             <div className="flex items-center space-x-2">
@@ -27,8 +41,13 @@ export default function CompanyHeader({ totalElements }: CompanyHeaderProps) {
                         className="w-ful h-full  border border-[#E0E0E0] rounded-lg pl-4 pr-9 placeholder:text-xs "
                         type="text"
                         placeholder="기업명을 검색해주세요."
+                        value={state.searchQuery}
+                        onChange={handleChange}
+                        onKeyDown={handleKeyDown}
                     />
-                    <IoSearch className="absolute w-5 h-5 right-3" />
+                    <button className="absolute right-3" onClick={handleSearch}>
+                        <IoSearch className="w-5 h-5" />
+                    </button>
                 </div>
             </div>
         </div>

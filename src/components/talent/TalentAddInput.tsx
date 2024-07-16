@@ -1,21 +1,18 @@
-import { CompanyInputFieldProps } from "../../types/company";
+import { TalentInputFieldProps } from "../../types/company";
 
-export default function CompanyInput({
+export default function TalentAddInput({
     id,
-    name,
     label,
     required,
     placeholder,
     maxLength,
     value,
     onChange,
-    context
-}: CompanyInputFieldProps) {
-    const showUrlPrefixIds = ["companyWebsite", "companyEmployment", "companyBlog"];
-
-    const showUrlView = showUrlPrefixIds.includes(id);
+    readOnly
+}: TalentInputFieldProps) {
+    const showUrlView = id === "baseUrl";
     return (
-        <div className="space-y-4">
+        <div className="space-y-4 w-full">
             <div className="flex justify-between items-center">
                 <label htmlFor={id} className="block font-GmarketSansBold text-xl">
                     {label}
@@ -34,11 +31,12 @@ export default function CompanyInput({
                     id={id}
                     type="text"
                     required={required}
-                    className={`text-xs max-w-lg w-full bg-[#F1F3F5] rounded-lg py-4 px-5 placeholder:text[#ADB5BD] placeholder:text-xs ${showUrlView && "pl-20"}`}
+                    className={`text-xs max-w-lg w-full bg-[#F1F3F5] rounded-lg py-4 px-5 placeholder:text[#ADB5BD] placeholder:text-xs ${showUrlView && "pl-20"} ${readOnly ? "bg-gray-200 outline-none" : ""}`}
                     placeholder={placeholder}
                     maxLength={maxLength}
                     value={value}
-                    onChange={e => onChange(name, e.target.value, context)}
+                    onChange={e => onChange && onChange(id, e.target.value)}
+                    readOnly={readOnly}
                 />
             </div>
         </div>
