@@ -22,7 +22,7 @@ export class CompanyAPI {
     public static async fetchCompanies(
         pageParam = 1
     ): Promise<{ data: CompanyCardProps[]; totalPages: number; page: number }> {
-        const response = await this.instance.get(`/company`, {
+        const response = await this.instance.get(`/company/list`, {
             params: { page: pageParam, size: 12 }
         });
 
