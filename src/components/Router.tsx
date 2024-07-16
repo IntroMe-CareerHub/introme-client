@@ -5,9 +5,9 @@ import Layout from "../layouts/Layout.tsx";
 import CompanyList from "../pages/company/CompanyList";
 import CompanyAdd from "../pages/company/CompanyAdd";
 import TalentInfo from "../pages/talent/TalentInfo.tsx";
-import TalentForm from "./talent/TalentForm.tsx";
 import SignIn from "../pages/login/SignIn.tsx";
 import SignInSuccess from "../pages/login/SignInSuccess.tsx";
+import TalentForm from "./talent/TalentForm.tsx";
 
 export default function Router() {
     return (
@@ -20,7 +20,10 @@ export default function Router() {
                 <Route path="/company/list" element={<CompanyList />} />
                 <Route path="/company/add" element={<CompanyAdd />} />
                 <Route path="/company/talent/:companyId" element={<TalentInfo />} />
-                <Route path="/company/talent/:companyId/form" element={<TalentForm />} />
+                <Route
+                    path="/company/talent/:companyId/form"
+                    element={<TalentForm onClose={() => {}} />}
+                />
             </Route>
         </Routes>
     );
