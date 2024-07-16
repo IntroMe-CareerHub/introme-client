@@ -9,7 +9,11 @@ export default defineConfig({
         port: 3000,
         proxy: {
             "/oauth2": apiUrl,
-            "/api": apiUrl,
+            "/api": {
+                target: apiUrl,
+                changeOrigin: true,
+                rewrite: path => path.replace(/^\/api/, "/api")
+            },
             "/logout": apiUrl
         }
     }
