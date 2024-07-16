@@ -5,16 +5,20 @@ import Layout from "../layouts/Layout.tsx";
 import CompanyList from "../pages/company/CompanyList";
 import CompanyAdd from "../pages/company/CompanyAdd";
 import TalentInfo from "../pages/talent/TalentInfo.tsx";
+import SignIn from "../pages/login/SignIn.tsx";
+import SignInSuccess from "../pages/login/SignInSuccess.tsx";
 
 export default function Router() {
     return (
         <Routes>
+            <Route path="/sign-in" element={<SignIn />} />
+            <Route path="/login-success" element={<SignInSuccess />} />
             <Route path="/" element={<Layout />}>
-                <Route path="/" element={<Main />} />
-                <Route path="/check" element={<SpellCheck />} />
-                <Route path="/company/list" element={<CompanyList />} />
-                <Route path="/company/add" element={<CompanyAdd />} />
-                <Route path="/company/talent/:companyId" element={<TalentInfo />} />
+                <Route index element={<Main />} />
+                <Route path="check" element={<SpellCheck />} />
+                <Route path="company/list" element={<CompanyList />} />
+                <Route path="company/add" element={<CompanyAdd />} />
+                <Route path="company/talent/:companyId" element={<TalentInfo />} />
             </Route>
         </Routes>
     );
