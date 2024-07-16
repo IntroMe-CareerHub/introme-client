@@ -12,6 +12,7 @@ export default defineConfig({
             "/api": {
                 target: apiUrl,
                 changeOrigin: true,
+                secure: false,
                 rewrite: path => path.replace(/^\/api/, "/api")
             },
             "/logout": apiUrl
