@@ -1,15 +1,19 @@
 import { Route, Routes } from "react-router-dom";
 import Main from "../pages/main/Main.tsx";
 import SpellCheck from "../pages/check/SpellCheck";
-import Layout from "./Layout";
+import Layout from "../layouts/Layout.tsx";
 import CompanyList from "../pages/company/CompanyList";
 import CompanyAdd from "../pages/company/CompanyAdd";
 import TalentInfo from "../pages/talent/TalentInfo.tsx";
 import TalentForm from "./talent/TalentForm.tsx";
+import SignIn from "../pages/login/SignIn.tsx";
+import SignInSuccess from "../pages/login/SignInSuccess.tsx";
 
 export default function Router() {
     return (
         <Routes>
+            <Route path="/sign-in" element={<SignIn />} />
+            <Route path="/login-success" element={<SignInSuccess />} />
             <Route path="/" element={<Layout />}>
                 <Route path="/" element={<Main />} />
                 <Route path="/check" element={<SpellCheck />} />
