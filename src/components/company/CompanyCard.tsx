@@ -16,7 +16,7 @@ export default function CompanyCard({ id, image, location, url, name, talents }:
             <div className="p-6">
                 <div className="flex items-center">
                     <div className="bg-slate-500 w-[60px] h-[60px] mr-3">
-                        <img src={image} alt={"image"} />
+                        <img src={`/src/assets/${image}`} alt={"image"} />
                     </div>
                     <div className="flex flex-col space-y-2">
                         <h3 className="font-semibold">{name}</h3>
