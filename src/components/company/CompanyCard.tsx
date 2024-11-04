@@ -35,7 +35,8 @@ export default function CompanyCard({ id, image, location, url, name, talents }:
                 <div className="flex flex-col space-y-2">
                     {talents.map(talent => (
                         <span key={talent.id} className="flex gap-2 font-semibold text-xs">
-                            <img src={talent.icon} alt={"icon"} /> {talent.keyword}
+                            <span style={{ fontSize: "1.2em", lineHeight: 1 }}>{talent.icon}</span>
+                            {talent.keyword}
                         </span>
                     ))}
                 </div>

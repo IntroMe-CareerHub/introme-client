@@ -32,7 +32,9 @@ export default function TalentContents({ talentData }: TalentContentsProps) {
                                 <motion.div variants={cardVariants}>
                                     <div className="flex flex-col gap-6">
                                         <div className="h-12 w-12">
-                                            <img src={item.icon} alt="icon" />
+                                            <span style={{ fontSize: "3rem", lineHeight: 1 }}>
+                                                {item.icon}
+                                            </span>
                                         </div>
                                         <p className="font-GmarketSansBold text-5xl">
                                             {item.keyword}
@@ -59,7 +61,10 @@ export default function TalentContents({ talentData }: TalentContentsProps) {
                                 <motion.div variants={cardVariants}>
                                     <div className="flex flex-col gap-6 justify-items-end">
                                         <div className="h-12 w-12 self-end">
-                                            <img src={item.icon} alt="icon" />
+                                            {/* <img src={item.icon} alt="icon" /> */}
+                                            <span style={{ fontSize: "3rem", lineHeight: 1 }}>
+                                                {item.icon}
+                                            </span>
                                         </div>
                                         <p className="font-GmarketSansBold text-5xl self-end">
                                             {item.keyword}

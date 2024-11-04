@@ -29,11 +29,12 @@ export default function TalentIconSlider({ talents }: TalentIconSliderProps) {
                 {duplicatedSlides.map((slide, index) => (
                     <div key={index} className="flex-shrink-0 w-[5%]">
                         <div className="bg-white rounded-full flex w-32 h-32 justify-center items-center">
-                            <img
-                                src={slide.icon}
+                            <span
                                 className="flex items-center justify-center h-16 w-16"
-                                alt="icon"
-                            />
+                                style={{ fontSize: "3rem", lineHeight: 1 }}
+                            >
+                                {slide.icon}
+                            </span>
                         </div>
                     </div>
                 ))}

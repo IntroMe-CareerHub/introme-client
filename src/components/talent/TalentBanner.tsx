@@ -12,7 +12,7 @@ export default function TalentBanner({ companyData, onAddTalent }: TalentBannerP
                 <div className="flex justify-between">
                     <div className="flex pt-10 pr-4 w-36 justify-end">
                         <div className="flex h-20 w-20 p-2 rounded-xl bg-white">
-                            <img src={image} alt={undefined} />
+                            <img src={`/src/assets/${image}`} alt={undefined} />
                         </div>
                     </div>
                     <div className="grow">
